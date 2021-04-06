@@ -5,7 +5,7 @@
 plugins {
     id("com.android.library")
     kotlin("multiplatform")
-    `maven-publish`
+    publish
 }
 
 android {
@@ -22,11 +22,5 @@ kotlin {
             api(AndroidX.annotation)
             api(AndroidX.recyclerView)
         }
-    }
-}
-
-afterEvaluate {
-    publishing {
-        setupAllPublications(project)
     }
 }

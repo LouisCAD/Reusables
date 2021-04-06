@@ -5,7 +5,7 @@
 plugins {
     id("com.android.library")
     kotlin("multiplatform")
-    `maven-publish`
+    publish
 }
 
 android {
@@ -30,11 +30,5 @@ kotlin {
                 useExperimentalAnnotation("kotlin.RequiresOptIn")
             }
         }
-    }
-}
-
-afterEvaluate {
-    publishing {
-        setupAllPublications(project)
     }
 }

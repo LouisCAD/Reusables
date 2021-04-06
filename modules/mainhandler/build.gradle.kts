@@ -5,7 +5,7 @@
 plugins {
     id("com.android.library")
     kotlin("multiplatform")
-    `maven-publish`
+    publish
 }
 
 android {
@@ -23,11 +23,5 @@ kotlin {
         androidMain.dependencies {
             implementation(splitties("mainthread"))
         }
-    }
-}
-
-afterEvaluate {
-    publishing {
-        setupAllPublications(project)
     }
 }

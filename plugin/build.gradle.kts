@@ -5,6 +5,7 @@ plugins {
     `kotlin-dsl`
     `maven-publish`
     id("com.gradle.plugin-publish") version "0.10.0"
+    id("org.jetbrains.dokka")
 }
 
 group = "com.louiscad.splitties"

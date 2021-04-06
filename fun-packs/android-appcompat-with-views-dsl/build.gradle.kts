@@ -7,7 +7,7 @@
 plugins {
     id("com.android.library")
     kotlin("multiplatform")
-    `maven-publish`
+    publish
 }
 
 android {
@@ -24,11 +24,5 @@ kotlin {
             api(project(":fun-packs:android-base-with-views-dsl"))
             api(splitties("views-dsl-appcompat"))
         }
-    }
-}
-
-afterEvaluate {
-    publishing {
-        setupAllPublications(project)
     }
 }

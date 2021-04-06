@@ -4,7 +4,7 @@
 
 plugins {
     kotlin("multiplatform")
-    `maven-publish`
+    publish
 }
 
 kotlin {
@@ -19,8 +19,4 @@ kotlin {
     mingw(x64 = true)
 
     configure(targets) { configureMavenPublication() }
-}
-
-publishing {
-    setupAllPublications(project)
 }

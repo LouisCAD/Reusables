@@ -4,7 +4,7 @@
 
 plugins {
     kotlin("multiplatform")
-    `maven-publish`
+    publish
 }
 
 kotlin {

@@ -7,7 +7,7 @@
 plugins {
     id("com.android.library")
     kotlin("multiplatform")
-    `maven-publish`
+    publish
 }
 
 android {
@@ -30,11 +30,5 @@ kotlin {
                 "views-material"
             ).forEach { api(splitties(it)) }
         }
-    }
-}
-
-afterEvaluate {
-    publishing {
-        setupAllPublications(project)
     }
 }

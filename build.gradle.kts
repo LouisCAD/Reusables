@@ -6,36 +6,19 @@
 
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmCompile
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
-import org.jetbrains.dokka.gradle.DokkaTask
 
 buildscript {
     repositories { setupForProject() }
-    dependencies {
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:_")
-        classpath("com.android.tools.build:gradle:_")
-    }
 }
 
 plugins {
     id("com.osacky.doctor")
-
-    kotlin("multiplatform") apply false // Classpath concerns for dokka, might be unneeded.
-    // See https://github.com/Kotlin/kotlin-examples/blob/8fd3982e9cf9ba0244833f3910911666902a9a8b/gradle/dokka/dokka-multimodule-example/parentProject/build.gradle.kts#L3-L5
-    // and: https://github.com/Kotlin/dokka/issues/1810
-    id("org.jetbrains.dokka")
+    docs
 }
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 allprojects {
-    plugins.withId("org.gradle.maven-publish") {
-        plugins.apply("org.jetbrains.dokka")
-        if (file("README.md").exists()) tasks.withType<DokkaTask> {
-            dokkaSourceSets.configureEach {
-                includes.from("README.md")
-            }
-        }
-    }
     repositories { setupForProject() }
     afterEvaluate {
         // Remove log pollution until Android support in KMP improves.

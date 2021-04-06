@@ -7,7 +7,7 @@ ongoing_release.splitties
 /buildSrc/.gradle/
 
 # Gradle build output directory
-/build
+build/
 /buildSrc/build/
 
 # unneeded IDE files, with whitelist
