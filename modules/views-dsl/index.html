@@ -1,0 +1,2263 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Life is too short to google for dependencies and versions">
+      
+      
+      
+        <meta name="author" content="LouisCAD">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.10">
+    
+    
+      
+        <title>Views DSL - Splitties</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1fe995fd.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4cae4f">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="blue">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#views-dsl" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="Splitties" class="md-header__button md-logo" aria-label="Splitties" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Splitties
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Views DSL
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/LouisCAD/Splitties/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    LouisCAD/Splitties
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Splitties" class="md-nav__button md-logo" aria-label="Splitties" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Splitties
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/LouisCAD/Splitties/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    LouisCAD/Splitties
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        Modules
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Modules" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../activities/index.html" class="md-nav__link">
+        Activities
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alertdialog/index.html" class="md-nav__link">
+        Alert Dialog
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alertdialog-appcompat/index.html" class="md-nav__link">
+        Alert Dialog AppCompat
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alertdialog-appcompat-coroutines/index.html" class="md-nav__link">
+        Alert Dialog AppCompat Coroutines
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alertdialog-material/index.html" class="md-nav__link">
+        Alert Dialog Material
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appctx/index.html" class="md-nav__link">
+        App Context
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arch-lifecycle/index.html" class="md-nav__link">
+        Arch Lifecycle
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arch-room/index.html" class="md-nav__link">
+        Arch Room
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bitflags/index.html" class="md-nav__link">
+        Bit Flags
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bundle/index.html" class="md-nav__link">
+        Bundle
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collections/index.html" class="md-nav__link">
+        Collections
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coroutines/index.html" class="md-nav__link">
+        Coroutines
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../checkedlazy/index.html" class="md-nav__link">
+        Checked Lazy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dimensions/index.html" class="md-nav__link">
+        Dimensions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exceptions/index.html" class="md-nav__link">
+        Exceptions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fragments/index.html" class="md-nav__link">
+        Fragments
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fragmentargs/index.html" class="md-nav__link">
+        Fragment Args
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../initprovider/index.html" class="md-nav__link">
+        Init Provider
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intents/index.html" class="md-nav__link">
+        Intents
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lifecycle-coroutines/index.html" class="md-nav__link">
+        Lifecycle Coroutines
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mainhandler/index.html" class="md-nav__link">
+        Main Handler
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mainthread/index.html" class="md-nav__link">
+        Main Thread
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../material-colors/index.html" class="md-nav__link">
+        Material Colors
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../material-lists/index.html" class="md-nav__link">
+        Material Lists
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preferences/index.html" class="md-nav__link">
+        Preferences
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../permissions/index.html" class="md-nav__link">
+        Permissions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/index.html" class="md-nav__link">
+        Resources
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../views-selectable/index.html" class="md-nav__link">
+        Selectable Views
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../views-selectable-appcompat/index.html" class="md-nav__link">
+        Selectable Views AppCompat
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../views-selectable-constraintlayout/index.html" class="md-nav__link">
+        Selectable Views ConstraintLayout
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../snackbar/index.html" class="md-nav__link">
+        Snackbar
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stetho-init/index.html" class="md-nav__link">
+        Stetho init
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systemservices/index.html" class="md-nav__link">
+        System Services
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../toast/index.html" class="md-nav__link">
+        Toast
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../typesaferecyclerview/index.html" class="md-nav__link">
+        Typesafe RecyclerView
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../views/index.html" class="md-nav__link">
+        Views
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../views-appcompat/index.html" class="md-nav__link">
+        Views AppCompat
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../views-cardview/index.html" class="md-nav__link">
+        Views CardView
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../views-coroutines/index.html" class="md-nav__link">
+        Views Coroutines
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../views-coroutines-material/index.html" class="md-nav__link">
+        Views Coroutines Material
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Views DSL
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="index.html" class="md-nav__link md-nav__link--active">
+        Views DSL
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-about-jetpack-compose" class="md-nav__link">
+    What about Jetpack Compose?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    Table of contents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-extensions" class="md-nav__link">
+    The extensions
+  </a>
+  
+    <nav class="md-nav" aria-label="The extensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-and-configuring-views" class="md-nav__link">
+    Creating and configuring views
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating and configuring views">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-most-generic-way-view" class="md-nav__link">
+    The most generic way: view
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-most-simple-and-readable-way-plain-functions" class="md-nav__link">
+    The most simple and readable way: plain functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-styles-defined-in-xml" class="md-nav__link">
+    Using styles defined in xml
+  </a>
+  
+    <nav class="md-nav" aria-label="Using styles defined in xml">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-android-styles" class="md-nav__link">
+    Using Android styles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-material-components-styles" class="md-nav__link">
+    Using Material Components styles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-appcompat-styles" class="md-nav__link">
+    Using AppCompat styles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-any-other-xml-style" class="md-nav__link">
+    Using any other xml style
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-extensions" class="md-nav__link">
+    View extensions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inflating-existing-xml-layouts" class="md-nav__link">
+    Inflating existing xml layouts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#laying-out-the-views" class="md-nav__link">
+    Laying out the views
+  </a>
+  
+    <nav class="md-nav" aria-label="Laying out the views">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#viewgroupadd-an-alias-to-viewgroupaddview" class="md-nav__link">
+    ViewGroup.add(…), an alias to ViewGroup.addView(…)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewgroups-extension-functions-to-instantiate-layoutparams" class="md-nav__link">
+    ViewGroups extension functions to instantiate LayoutParams
+  </a>
+  
+    <nav class="md-nav" aria-label="ViewGroups extension functions to instantiate LayoutParams">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#warning-regarding-lparams-and-defaultlparams-usage" class="md-nav__link">
+    WARNING regarding lParams and defaultLParams usage:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-extensions-for-viewgroup" class="md-nav__link">
+    Other extensions for ViewGroup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-interface-for-user-interfaces-named-ui" class="md-nav__link">
+    The interface for user interfaces, named Ui
+  </a>
+  
+    <nav class="md-nav" aria-label="The interface for user interfaces, named Ui">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-this-interface" class="md-nav__link">
+    Why this interface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-it-is-made-of" class="md-nav__link">
+    What it is made of
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementing-the-ui-interface" class="md-nav__link">
+    Implementing the Ui interface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-ui-implementations" class="md-nav__link">
+    Using Ui implementations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simple-examples" class="md-nav__link">
+    Simple examples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#possibilities-brought-by-the-ui-interface" class="md-nav__link">
+    Possibilities brought by the Ui interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Possibilities brought by the Ui interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ide-preview" class="md-nav__link">
+    IDE Preview
+  </a>
+  
+    <nav class="md-nav" aria-label="IDE Preview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ide-preview-example" class="md-nav__link">
+    IDE Preview Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-info-regarding-xml-based-ide-preview" class="md-nav__link">
+    Important info regarding xml based IDE Preview
+  </a>
+  
+    <nav class="md-nav" aria-label="Important info regarding xml based IDE Preview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interfaces-parameters" class="md-nav__link">
+    Interfaces parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#known-issues-and-their-workaround" class="md-nav__link">
+    Known issues and their workaround
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finding-a-suitable-constructor-to-instantiate-your-ui" class="md-nav__link">
+    Finding a suitable constructor to instantiate your UI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finding-the-class" class="md-nav__link">
+    Finding the class
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modular-user-interface-contracts" class="md-nav__link">
+    Modular user interface contracts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#easier-multi-form-factors-support" class="md-nav__link">
+    Easier multi form factors support
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiplatform-user-interface-contracts" class="md-nav__link">
+    Multiplatform user interface contracts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    Testing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redesign" class="md-nav__link">
+    Redesign
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ab-testing" class="md-nav__link">
+    A/B Testing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-modules" class="md-nav__link">
+    Additional modules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download" class="md-nav__link">
+    Download
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../views-dsl-appcompat/index.html" class="md-nav__link">
+        Views DSL AppCompat
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../views-dsl-constraintlayout/index.html" class="md-nav__link">
+        Views DSL ConstraintLayout
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../views-dsl-coordinatorlayout/index.html" class="md-nav__link">
+        Views DSL CoordinatorLayout
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../views-dsl-material/index.html" class="md-nav__link">
+        Views DSL Material
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../views-dsl-recyclerview/index.html" class="md-nav__link">
+        Views DSL RecyclerView
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../views-material/index.html" class="md-nav__link">
+        Views Material
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../views-recyclerview/index.html" class="md-nav__link">
+        Views RecyclerView
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CHANGELOG.html" class="md-nav__link">
+        Change Log
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-about-jetpack-compose" class="md-nav__link">
+    What about Jetpack Compose?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    Table of contents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-extensions" class="md-nav__link">
+    The extensions
+  </a>
+  
+    <nav class="md-nav" aria-label="The extensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-and-configuring-views" class="md-nav__link">
+    Creating and configuring views
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating and configuring views">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-most-generic-way-view" class="md-nav__link">
+    The most generic way: view
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-most-simple-and-readable-way-plain-functions" class="md-nav__link">
+    The most simple and readable way: plain functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-styles-defined-in-xml" class="md-nav__link">
+    Using styles defined in xml
+  </a>
+  
+    <nav class="md-nav" aria-label="Using styles defined in xml">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-android-styles" class="md-nav__link">
+    Using Android styles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-material-components-styles" class="md-nav__link">
+    Using Material Components styles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-appcompat-styles" class="md-nav__link">
+    Using AppCompat styles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-any-other-xml-style" class="md-nav__link">
+    Using any other xml style
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-extensions" class="md-nav__link">
+    View extensions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inflating-existing-xml-layouts" class="md-nav__link">
+    Inflating existing xml layouts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#laying-out-the-views" class="md-nav__link">
+    Laying out the views
+  </a>
+  
+    <nav class="md-nav" aria-label="Laying out the views">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#viewgroupadd-an-alias-to-viewgroupaddview" class="md-nav__link">
+    ViewGroup.add(…), an alias to ViewGroup.addView(…)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewgroups-extension-functions-to-instantiate-layoutparams" class="md-nav__link">
+    ViewGroups extension functions to instantiate LayoutParams
+  </a>
+  
+    <nav class="md-nav" aria-label="ViewGroups extension functions to instantiate LayoutParams">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#warning-regarding-lparams-and-defaultlparams-usage" class="md-nav__link">
+    WARNING regarding lParams and defaultLParams usage:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-extensions-for-viewgroup" class="md-nav__link">
+    Other extensions for ViewGroup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-interface-for-user-interfaces-named-ui" class="md-nav__link">
+    The interface for user interfaces, named Ui
+  </a>
+  
+    <nav class="md-nav" aria-label="The interface for user interfaces, named Ui">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-this-interface" class="md-nav__link">
+    Why this interface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-it-is-made-of" class="md-nav__link">
+    What it is made of
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementing-the-ui-interface" class="md-nav__link">
+    Implementing the Ui interface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-ui-implementations" class="md-nav__link">
+    Using Ui implementations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simple-examples" class="md-nav__link">
+    Simple examples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#possibilities-brought-by-the-ui-interface" class="md-nav__link">
+    Possibilities brought by the Ui interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Possibilities brought by the Ui interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ide-preview" class="md-nav__link">
+    IDE Preview
+  </a>
+  
+    <nav class="md-nav" aria-label="IDE Preview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ide-preview-example" class="md-nav__link">
+    IDE Preview Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-info-regarding-xml-based-ide-preview" class="md-nav__link">
+    Important info regarding xml based IDE Preview
+  </a>
+  
+    <nav class="md-nav" aria-label="Important info regarding xml based IDE Preview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interfaces-parameters" class="md-nav__link">
+    Interfaces parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#known-issues-and-their-workaround" class="md-nav__link">
+    Known issues and their workaround
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finding-a-suitable-constructor-to-instantiate-your-ui" class="md-nav__link">
+    Finding a suitable constructor to instantiate your UI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finding-the-class" class="md-nav__link">
+    Finding the class
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modular-user-interface-contracts" class="md-nav__link">
+    Modular user interface contracts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#easier-multi-form-factors-support" class="md-nav__link">
+    Easier multi form factors support
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiplatform-user-interface-contracts" class="md-nav__link">
+    Multiplatform user interface contracts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    Testing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redesign" class="md-nav__link">
+    Redesign
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ab-testing" class="md-nav__link">
+    A/B Testing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-modules" class="md-nav__link">
+    Additional modules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download" class="md-nav__link">
+    Download
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/LouisCAD/Splitties/edit/main/modules/views-dsl/README.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="views-dsl">Views DSL<a class="headerlink" href="#views-dsl" title="Permanent link">&para;</a></h1>
+<p><em>Create UIs with readable Kotlin code.</em></p>
+<p>Supported platforms: <strong>Android</strong>.</p>
+<p>There's a whole document about <a href="Kotlin-UIs-vs-xml-layouts.html">Views DSL vs xml layouts</a>
+if you are not convinced yet.</p>
+<p><em>TL;DR:</em> Kotlin code is more concise than xml, and a small library like this
+one is the proof of what is already possible with this great language.</p>
+<p>Splitties Views DSL has been designed to be:
+* Simple
+* Concise
+* Expressive
+* Explicit
+* Efficient
+* Reliable
+* Flexible</p>
+<p>That's 7 key considerations, which we believe are all necessary to make a great library.</p>
+<h2 id="what-about-jetpack-compose">What about Jetpack Compose?<a class="headerlink" href="#what-about-jetpack-compose" title="Permanent link">&para;</a></h2>
+<p>We think that Jetpack Compose is really great and is definitely the future of UI development.</p>
+<p>Regarding the present though, as of September of the year 2020, APIs based on <code>android.view.View</code>
+are still the foundation that powers nearly all Android apps, and that API is already stable, unlike
+Jetpack Compose that is currently in alpha. Splitties Views DSL is as stable as its foundation,
+its API hasn't changed since 2018 and there's no plan on breaking changes.</p>
+<p>Splitties Views DSL has a seamless interoperability with existing Views and xml layout, maybe more
+seamless than Jetpack Compose.</p>
+<p>To sum it up, Splitties is a great way to use Kotlin in your UI code with an API you already know,
+plus extensions provided by Splitties Views DSL to cut down on boilerplate while Jetpack Compose
+stabilizes (which should complete sometime in 2021).</p>
+<p>If you have any further questions on this topic, feel free to ask it in the <code>#splitties</code> channel of
+the Kotlin's Slack or in the issues here on GitHub.</p>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>As said above, Splitties Views DSL has been designed to be <em>simple</em>.</p>
+<p>Consequently, you'll find no class in this split (API-wise, as strictly speaking,
+all functions and properties, even top-level ones and extensions belong to a class
+in the bytecode). That means you won't have to learn a whole new API to use
+Splitties Views DSL. You'll just have to discover the extension functions and
+properties as you need them to craft your Android user interfaces with Kotlin code.</p>
+<p>It turns out that you just need a few extension functions and properties to
+make UI-related code at least as readable as xml counterparts. Note that while
+putting all of your UI code directly in an <code>Activity</code> or a <code>Fragment</code> is
+possible with Splitties Views DSL (and can surely help for throwaway prototyping),
+we will be recommending a cleaner, yet simple approach (spoiler: a custom class).</p>
+<p>Before we dive into the details of the API, let's take a look at a simple example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">val</span> <span class="nv">launchDemoBtn</span> <span class="o">=</span> <span class="n">button</span> <span class="p">{</span>
+    <span class="n">textResource</span> <span class="o">=</span> <span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">go_to_the_demo</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>This example was meaningless</strong>, because no one ever publishes an app with only
+one button. Also, the snippet above just creates a button. If you want it into
+a <code>ViewGroup</code>, or as the content of an <code>Activity</code> or a <code>Fragment</code>, you need to
+do so explicitly.</p>
+<p>There are <strong>real examples in the sample</strong>. You can start by taking a look at
+<a href="https://github.com/LouisCAD/Splitties/tree/main/samples/android-app/src/androidMain/kotlin/com/example/splitties/main/MainUi.kt"><code>MainUi</code></a>.
+You can also see a simple example that uses <code>ConstraintLayout</code> in <a href="https://github.com/LouisCAD/Splitties/tree/main/samples/android-app/src/androidMain/kotlin/com/example/splitties/about/AboutUi.kt"><code>AboutUi</code></a>.</p>
+<p><em>Opening the project in your IDE and navigating the sample UI code while reading
+this documentation may certainly help you have a hands-on experience and be
+comfortable more quickly writing UIs with Kotlin, a programming language that is
+probably already familiar to you.</em></p>
+<h2 id="table-of-contents">Table of contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="#the-extensions">The extensions</a><ul>
+<li><a href="#creating-and-configuring-views">Creating and configuring views</a><ul>
+<li><a href="#the-most-generic-way-view">The most generic way: <code>view</code></a></li>
+<li><a href="#using-styles-defined-in-xml">Using styles defined in xml</a><ul>
+<li><a href="#using-android-styles">Using Android styles</a></li>
+<li><a href="#using-appcompat-styles">Using AppCompat styles</a></li>
+<li><a href="#using-any-other-xml-style">Using any other xml style</a></li>
+</ul>
+</li>
+<li><a href="#the-most-simple-and-readable-way-plain-functions">The most simple and readable way: plain functions</a></li>
+<li><a href="#view-extensions">View extensions</a></li>
+<li><a href="#inflating-existing-xml-layouts">Inflating existing xml layouts</a></li>
+</ul>
+</li>
+<li><a href="#laying-out-the-views">Laying out the views</a><ul>
+<li><a href="#viewgroupadd-an-alias-to-viewgroupaddview"><code>ViewGroup.add(…)</code>, an alias to <code>ViewGroup.addView(…)</code></a></li>
+<li><a href="#viewgroups-extension-functions-to-instantiate-layoutparams">ViewGroups extension functions to instantiate LayoutParams</a><ul>
+<li><a href="#warning-regarding-lparams-and-defaultlparams-usage">WARNING regarding <code>lParams</code> and <code>defaultLParams</code> usage</a></li>
+</ul>
+</li>
+<li><a href="#other-extensions-for-viewgroup">Other extensions for <code>ViewGroup</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#the-interface-for-user-interfaces-named-ui">The interface for user interfaces, named <code>Ui</code></a><ul>
+<li><a href="#why-this-interface">Why this interface</a></li>
+<li><a href="#what-it-is-made-of">What it is made of</a></li>
+<li><a href="#implementing-the-ui-interface">Implementing the interface</a></li>
+<li><a href="#using-ui-implementations">Using Ui implementations</a></li>
+<li><a href="#simple-examples">Simple examples</a></li>
+<li><a href="#possibilities-brought-by-the-ui-interface">Possibilities brought by the <code>Ui</code> interface</a><ul>
+<li><a href="#ide-preview">IDE Preview</a><ul>
+<li><a href="#ide-preview-example">IDE Preview Example</a></li>
+<li><a href="#important-info-regarding-xml-based-ide-preview">Important info regarding xml based IDE Preview</a><ul>
+<li><a href="#interfaces-parameters">Interfaces parameters</a></li>
+<li><a href="#known-issues-and-their-workaround">Known issues and their workaround</a></li>
+<li><a href="#finding-a-suitable-constructor-to-instantiate-your-ui">Finding a suitable constructor to instantiate your UI</a></li>
+<li><a href="#finding-the-class">Finding the class</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#modular-user-interface-contracts">Modular user interface contracts</a></li>
+<li><a href="#easier-multi-form-factors-support">Easier multi form factors support</a></li>
+<li><a href="#multiplatform-user-interface-contracts">Multiplatform user interface contracts</a></li>
+<li><a href="#testing">Testing</a></li>
+<li><a href="#redesign">Redesign</a></li>
+<li><a href="#ab-testing">A/B Testing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#additional-modules">Additional modules</a></li>
+<li><a href="#download">Download</a></li>
+</ul>
+<h2 id="the-extensions">The extensions<a class="headerlink" href="#the-extensions" title="Permanent link">&para;</a></h2>
+<p>Splitties is primarily made of extension functions and properties, to create
+views with minimal code but maximum flexibility.</p>
+<p>Just calling the constructor, then calling needed methods in an <code>apply { ... }</code>
+block could be enough to use Kotlin instead of xml for your user interfaces,
+but <strong>Splitties Views DSL allows something more readable</strong>, more concise,
+and with a few features, like themes, styles, and seamless AppCompat
+support, <strong>without the boilerplate</strong>.</p>
+<h3 id="creating-and-configuring-views">Creating and configuring views<a class="headerlink" href="#creating-and-configuring-views" title="Permanent link">&para;</a></h3>
+<h4 id="the-most-generic-way-view">The most generic way: <code>view</code><a class="headerlink" href="#the-most-generic-way-view" title="Permanent link">&para;</a></h4>
+<p>The <code>view</code> extension functions are a primitive of Splitties Views DSL.
+They are generic, so they allow you to instantiate a <code>View</code> of any type.</p>
+<p>There are 6 functions named <code>view</code>, because there's <strong>2 overload types</strong>, and they
+are made available for 3 receiver types: <code>Ui</code>, <code>View</code> and <code>Context</code>. One of this overload type is
+an internal API (more info below).</p>
+<p>With respect to efficiency, they are all <strong>inline</strong>. That means no unnecessary
+allocation that would slightly decrease performance otherwise.</p>
+<p>Both overloads allow the following 3 <strong>optional</strong> parameters:
+* <code>@IdRes id: Int</code>, the id of the View. Example argument: <code>R.id.input_name</code>, given
+you declared it in xml, <a href="https://github.com/LouisCAD/Splitties/tree/main/samples/android-app/src/androidMain/res/values/view_ids.xml">as done in the sample</a>
+* <code>@StyleRes theme: Int</code>, resource of a theme overlay that will be applied to
+the View. Example argument: <code>R.style.AppTheme_AppBarOverlay</code>
+* <code>initView: V.() -&gt; Unit</code>, a lambda that is like <code>apply</code> for the created View.</p>
+<p><strong>The first overload</strong> of <code>view</code> takes a required first parameter that is a function
+taking a <code>Context</code>, and returning a <code>View</code>. Since constructors are also
+methods in Kotlin, you can directly use a method reference like so:
+<code>view(::View)</code>.
+The same goes for any other <code>View</code> subclass (e.g. <code>view(::FrameLayout)</code>).
+You can also use a lambda instead: <code>view({ FrameLayout(it) })</code>. In fact, that's
+how you should do it while autocomplete for method references is not optimal,
+then use the IDE quick action (<kbd>alt</kbd>/<kbd>⌥ option</kbd> + <kbd>⏎ enter</kbd>)
+to convert it to method reference.
+You can of course use any custom method reference that is not a reference to
+a constructor as long as that method takes a <code>Context</code> parameter and returns a
+<code>View</code> or any subclass of it.</p>
+<p>Here's a simple but typical example:
+<div class="highlight"><pre><span></span><code><span class="kd">val</span> <span class="nv">myView</span><span class="p">:</span> <span class="n">MyCustomView</span> <span class="o">=</span> <span class="n">view</span><span class="p">(</span><span class="o">::</span><span class="n">MyCustomView</span><span class="p">,</span> <span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">my_view</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">backgroundColor</span> <span class="o">=</span> <span class="n">Color</span><span class="p">.</span><span class="na">BLACK</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>The second overload</strong> of <code>view</code>, which <strong>is an internal API</strong> takes no required parameter,
+but relies on explicit (reified) type parameter to work properly. Just <code>view&lt;TextView&gt;()</code> is
+enough to instantiate a <code>TextView</code>. However, this version relies on a "view factory" that
+can automatically provide subclasses of the requested type as necessary. If
+you use the Views DSL AppCompat, you'll automatically receive instances of
+<code>AppCompatButton</code> with <code>view&lt;Button&gt;</code> thanks to the underlying View factory.</p>
+<p>Here's a simple example of this second overload:
+<div class="highlight"><pre><span></span><code><span class="kd">val</span> <span class="nv">submitBtn</span> <span class="o">=</span> <span class="n">view</span><span class="o">&lt;</span><span class="n">Button</span><span class="o">&gt;</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">btn_submit</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// You should use `button { … }` instead though.</span>
+    <span class="n">textResource</span> <span class="o">=</span> <span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">submit</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h4 id="the-most-simple-and-readable-way-plain-functions">The most simple and readable way: plain functions<a class="headerlink" href="#the-most-simple-and-readable-way-plain-functions" title="Permanent link">&para;</a></h4>
+<p>Instead of using <code>view&lt;Button&gt; { … }</code> or <code>view(::Button) { … }</code> to create a <code>Button</code> instance
+(which uses an internal API), you can use <code>button(…) { … }</code>. The parameters are exactly the same as
+the <code>view</code> function.</p>
+<p>Such methods exist for most <code>View</code>s and <code>ViewGroup</code>s included in Android, and
+there's more in the <a href="#additional-modules">additional modules</a>.</p>
+<p>You can see implementations for Android's <a href="https://github.com/LouisCAD/Splitties/tree/main/modules/views-dsl/src/androidMain/kotlin/splitties/views/dsl/core/Views.kt">Views</a>
+and <a href="https://github.com/LouisCAD/Splitties/tree/main/modules/views-dsl/src/androidMain/kotlin/splitties/views/dsl/core/ViewGroups.kt">ViewGroups</a>.</p>
+<p>These methods are a bit more natural to read and to write, but they are really
+just <strong>inline</strong> aliases, purely syntactic sugar.</p>
+<p>You can define your own if you want. Just make sure to write it first for
+<code>Context</code> and add two overloads for <code>View</code> and <code>Ui</code> that delegate to the
+one for <code>Context</code>. Also, remember to make them inline to avoid lambda allocation.</p>
+<h4 id="using-styles-defined-in-xml">Using styles defined in xml<a class="headerlink" href="#using-styles-defined-in-xml" title="Permanent link">&para;</a></h4>
+<p>There are some times where you need to use an xml defined style,
+such as when using a style defined in AppCompat like <code>Widget_AppCompat_Button_Colored</code>.</p>
+<p>Splitties makes it really easy to use xml styles defined in Android, AppCompat and Material Components.</p>
+<p>It also gives you the ability to do the same for custom or third-party styles defined
+in xml.</p>
+<h5 id="using-android-styles">Using Android styles<a class="headerlink" href="#using-android-styles" title="Permanent link">&para;</a></h5>
+<p>Let's say you want to create a horizontal <code>ProgressBar</code> instance. First, cache an instance
+of <code>AndroidStyles</code>:
+<div class="highlight"><pre><span></span><code><span class="kd">private</span> <span class="kd">val</span> <span class="nv">androidStyles</span> <span class="o">=</span> <span class="n">AndroidStyles</span><span class="p">(</span><span class="n">ctx</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Then, use the function defined on the <code>progressBar</code> property:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">val</span> <span class="nv">progressbar</span> <span class="o">=</span> <span class="n">androidStyles</span><span class="p">.</span><span class="na">progressBar</span><span class="p">.</span><span class="na">horizontal</span><span class="p">()</span>
+</code></pre></div>
+<p>Other styles defined in the Android platform are provided in <code>AndroidStyles</code>.
+Just let auto-completion guide you.</p>
+<p>Note that you have <strong>exactly the same optional parameters as <code>view</code></strong>, including the optional lambda.</p>
+<h5 id="using-material-components-styles">Using Material Components styles<a class="headerlink" href="#using-material-components-styles" title="Permanent link">&para;</a></h5>
+<p>Since Material Components styles are not included by default inside the theme, you need to
+load them first. This is simply done with the following code:
+<div class="highlight"><pre><span></span><code><span class="kd">private</span> <span class="kd">val</span> <span class="nv">materialStyles</span> <span class="o">=</span> <span class="n">MaterialComponentsStyles</span><span class="p">(</span><span class="n">ctx</span><span class="p">)</span>
+</code></pre></div></p>
+<p>You can then use styles using the <code>MaterialComponentsStyles</code> instance. Here's an example:
+<div class="highlight"><pre><span></span><code><span class="kd">val</span> <span class="nv">bePoliteBtn</span> <span class="o">=</span> <span class="n">materialStyles</span><span class="p">.</span><span class="na">button</span><span class="p">.</span><span class="na">outlined</span> <span class="p">{</span>
+    <span class="n">textResource</span> <span class="o">=</span> <span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">be_polite</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h5 id="using-appcompat-styles">Using AppCompat styles<a class="headerlink" href="#using-appcompat-styles" title="Permanent link">&para;</a></h5>
+<p>Since AppCompat styles are not included by default inside the theme, you need to
+load them first. This is simply done with the following code:
+<div class="highlight"><pre><span></span><code><span class="kd">private</span> <span class="kd">val</span> <span class="nv">appCompatStyles</span> <span class="o">=</span> <span class="n">AppCompatStyles</span><span class="p">(</span><span class="n">ctx</span><span class="p">)</span>
+</code></pre></div></p>
+<p>You can then use styles using the <code>AppCompatStyles</code> instance. Here's an example:
+<div class="highlight"><pre><span></span><code><span class="kd">val</span> <span class="nv">bePoliteBtn</span> <span class="o">=</span> <span class="n">appCompatStyles</span><span class="p">.</span><span class="na">button</span><span class="p">.</span><span class="na">colored</span> <span class="p">{</span>
+    <span class="n">textResource</span> <span class="o">=</span> <span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">be_rude</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h5 id="using-any-other-xml-style">Using any other xml style<a class="headerlink" href="#using-any-other-xml-style" title="Permanent link">&para;</a></h5>
+<p>The <code>colored</code>, <code>horizontal</code> and other properties you can find in the <code>AndroidStyles</code>
+and the <code>AppCompatStyles</code> have the <code>XmlStyle</code> type. It is easy to instantiate it and
+support any xml style after the style is loaded into the current theme, but before
+we see how it's done, let's see what is this type.</p>
+<p>The <code>XmlStyle</code> <strong>inline</strong> class has:
+* A type parameter, for the target <code>View</code> type.
+* A single <code>Int</code> value, a theme attribute (<code>@AttrRes</code>, not <code>@StyleRes</code>).</p>
+<p>As you can see, its constructor doesn't expect a style resource (e.g.
+<code>R.style.Widget_AppCompat_ActionButton</code>), but a theme attribute resource (e.g.
+<code>R.attr.Widget_AppCompat_ActionButton</code>). This is because of a limitation in
+Android where you can programmatically only use xml styles that are inside a theme.
+That doesn't mean that you will have to pollute all the themes you're using
+with styles definitions though.</p>
+<p>Android allows you to combine multiple themes with the <code>applyStyle(…)</code> method
+that you can call on any <code>theme</code>, which any <code>Context</code> has. That way, you can
+apply a theme that already includes references the xml styles you need with
+only one line of code. This is what the <code>AppCompatStyles(ctx)</code> function
+mentioned does under the hood.</p>
+<p>Here's a short example:
+<div class="highlight"><pre><span></span><code><span class="n">ctx</span><span class="p">.</span><span class="na">theme</span><span class="p">.</span><span class="na">applyStyle</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">style</span><span class="p">.</span><span class="na">ThirdPartyStyles</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>
+<span class="kd">val</span> <span class="nv">clapButton</span> <span class="o">=</span> <span class="n">XmlStyle</span><span class="o">&lt;</span><span class="n">Button</span><span class="o">&gt;</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">attr</span><span class="p">.</span><span class="na">Widget_ThirdParty_FancyButton</span><span class="p">)(</span><span class="n">ctx</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">imageResource</span> <span class="o">=</span> <span class="n">R</span><span class="p">.</span><span class="na">drawable</span><span class="p">.</span><span class="na">ic_clap_white_24dp</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>The first line makes sure the <code>theme</code> associated to the <code>Context</code> named <code>ctx</code>
+can resolve all the style attributes defined into <code>R.style.ThirdPartyStyles</code>,
+such as <code>R.attr.Widget_ThirdParty_FancyButton</code>.</p>
+<p>To make this work, you have to do the following:
+1. Declare <code>ThirdPartyStyles</code> in xml (usually in a file named <code>styles.xml</code>)
+2. Declare the <code>Widget_ThirdParty_FancyButton</code> attribute (usually in a file named
+<code>attrs.xml</code>)
+3. Declare <code>Widget_ThirdParty_FancyButton</code> into <code>ThirdPartyStyles</code> and
+make sure it references the style target resource
+(named <code>Widget_ThirdParty_FancyButton</code> too). Using the same name for the target
+style and the attribute is a recommendation (for clarity), but not a requirement.</p>
+<p>After this is done, you can make a class to group related styles, as done in the
+<a href="../views-dsl-appcompat">Views DSL AppCompat split</a>, so you get type
+inference, and a nicer syntax.</p>
+<h4 id="view-extensions">View extensions<a class="headerlink" href="#view-extensions" title="Permanent link">&para;</a></h4>
+<p>For even more expressive UI code, Splitties Views DSL has a transitive dependency on
+the <a href="../views">Views split</a> that provides a useful set of Kotlin-friendly extension
+functions and properties dedicated to <code>View</code>s and some of their subclasses.</p>
+<h4 id="inflating-existing-xml-layouts">Inflating existing xml layouts<a class="headerlink" href="#inflating-existing-xml-layouts" title="Permanent link">&para;</a></h4>
+<p>Splitties Views DSL works well with xml layouts too!</p>
+<p>The <code>inflate</code> extension functions is a variant to the <code>view</code> function <a href="#the-most-generic-way-view">mentioned
+earlier in this guide</a> which has an additional first
+parameter: the layout resource id you want to inflate.</p>
+<p>Also, if the xml layout defines an id for the root view, it will be kept, unless
+you specified an explicit id (including <code>View.NO_ID</code>).</p>
+<p>Just like <code>view</code>, <code>inflate</code> is defined for <code>Context</code>, <code>View</code> and <code>Ui</code>.</p>
+<p>Here's a short example:
+<div class="highlight"><pre><span></span><code><span class="kd">val</span> <span class="nv">mySecretFancyView</span> <span class="o">=</span> <span class="n">inflate</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">my_fancy_layout</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">isVisible</span> <span class="o">=</span> <span class="kc">false</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="laying-out-the-views">Laying out the views<a class="headerlink" href="#laying-out-the-views" title="Permanent link">&para;</a></h3>
+<h4 id="viewgroupadd-an-alias-to-viewgroupaddview"><code>ViewGroup.add(…)</code>, an alias to <code>ViewGroup.addView(…)</code><a class="headerlink" href="#viewgroupadd-an-alias-to-viewgroupaddview" title="Permanent link">&para;</a></h4>
+<p>To add a <code>View</code> to a <code>ViewGroup</code> in code, you can use <code>View.addView(…)</code>. However,
+this can become quite redundant to have <code>View</code> repeated over and over when it's
+already obvious that you are in a UI centric class that passes a parameter that is
+clearly a <code>View</code>.</p>
+<p>That's why this split has an <strong>inline</strong> alias to it named just <code>add(…)</code> for <code>ViewGroup</code>.
+It has the extra benefit of returning the passed <code>View</code>, which can be handy in some
+situations.</p>
+<p>The <code>ViewGroup.add(…)</code> function requires an instance of <code>ViewGroup.LayoutParams</code>,
+see how Splitties helps instantiating it with minimal, yet explicit code.</p>
+<p>The <code>add</code> function also has 2 overloads that take either a <code>beforeChild</code> or an <code>afterChild</code>
+argument, handy when the order of Views matters or when adding views dynamically.</p>
+<h4 id="viewgroups-extension-functions-to-instantiate-layoutparams">ViewGroups extension functions to instantiate LayoutParams<a class="headerlink" href="#viewgroups-extension-functions-to-instantiate-layoutparams" title="Permanent link">&para;</a></h4>
+<p>Splitties provides several methods named <code>lParams(…) { … }</code> for the 2 Android's
+built-in <code>ViewGroup</code>s: <code>LinearLayout</code> and <code>FrameLayout</code>. You can find support
+for additional <code>ViewGroup</code>s in the <a href="#additional-modules">additional modules</a>.</p>
+<p>These methods make it easy to instantiate LayoutParams with typesafe and readable code (unlike xml).</p>
+<p>Here's the contract that every <code>lParams</code> or alike function must respect:
+1. The receiver is the type of the target <code>ViewGroup</code> subclass.
+2. The function returns the <code>LayoutParams</code> for the target <code>ViewGroup</code>.
+3. The first parameter is <code>width</code> and defaults to <code>wrapContent</code>, unless otherwise noted.
+4. The second parameter is <code>height</code> and defaults to the same value as <code>width</code>, unless otherwise
+noted.
+5. The <code>width</code> or <code>height</code> parameters may be missing in case they shall always have the same value
+for this target <code>ViewGroup</code> or for this function.
+5. There may be additional parameters, with default values if possible.
+6. The last parameter is a lambda with <code>LayoutParams</code> as a receiver and is executed exactly once,
+last (i.e. after any logic that the <code>lParams</code> implementation may have).
+7. If the <code>lParams</code> function targets a <code>ViewGroup</code> that has a superclass that also has its own
+<code>LayoutParams</code>, and its own <code>lParams</code> function, it should be named <code>defaultLParams</code> instead to
+prevent any overload resolution ambiguity. A great example is <code>AppBarLayout</code> that is a child class
+of <code>LinearLayout</code> and has such extension functions for <code>LayoutParams</code>.
+8. In case the function is specialized for non default use case (e.g. adding an <code>AppBarLayout</code> into
+a <code>CoordinatorLayout</code>), it can have a custom name, but should always end with <code>LParams</code> (e.g.
+<code>appBarLParams</code>).</p>
+<h5 id="warning-regarding-lparams-and-defaultlparams-usage"><strong>WARNING</strong> regarding <code>lParams</code> and <code>defaultLParams</code> usage:<a class="headerlink" href="#warning-regarding-lparams-and-defaultlparams-usage" title="Permanent link">&para;</a></h5>
+<p><code>lParams</code> and similar functions are resolved based on the type of their receiver.
+However, unless you prepend <code>lParams</code> or <code>defaultLParams</code> call with <code>this.</code>, the received is picked
+implicitly, and can be indirect, possibly causing the wrong <code>lParams</code> method to be used.</p>
+<p>Here's <strong>a short, example</strong>:</p>
+<p>You're in a <code>FrameLayout</code> (because you're writing a subclass of it, or because of a lambda
+receiver, like inside <code>frameLayout { … }</code>).
+You call <code>constraintLayout { … }</code> and start adding views inside it, but when you call <code>lParams</code>,
+you may use the implementation for <code>FrameLayout</code>, and wonder why the
+<code>ConstraintLayout.LayoutParams</code> properties and extensions are not available.</p>
+<p>To highlight such errors, you can prepend <code>this.</code> to your suspicious <code>lParams</code> calls, and if they
+are in red, then you used the wrong one for the <code>ViewGroup</code> you're in. The IDE should quickly
+fix it, adding the proper import at this point.</p>
+<p>After this is done, you can then safely remove the <code>this.</code> prefix.</p>
+<p>To avoid this issue, you can be alert when you're typing/auto-completing <code>lParams</code> and
+<code>defaultLParams</code> and make sure that you're selecting the extension for the type of the <code>ViewGroup</code>
+you're in (direct parent of the child View you are adding).</p>
+<h4 id="other-extensions-for-viewgroup">Other extensions for <code>ViewGroup</code><a class="headerlink" href="#other-extensions-for-viewgroup" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>wrapContent</code> and <code>matchParent</code> inline extensions properties on
+<code>ViewGroup</code> are convenience aliases to <code>ViewGroup.LayoutParams.WRAP_CONTENT</code>
+and <code>ViewGroup.LayoutParams.MATCH_PARENT</code>.</li>
+<li><code>horizontalMargin</code>, <code>verticalMargin</code> and <code>margin</code> for convenient margins
+definition in layout parameters (<code>ViewGroup.MarginLayoutParams</code> which is the
+base of nearly all LayoutParams).</li>
+<li><code>startMargin</code> and <code>endMargin</code> which are compatible below API 17 (using LTR)
+and fix the inconsistent name ordering (<code>leftMargin</code>, but <code>marginStart</code>?).</li>
+</ul>
+<h2 id="the-interface-for-user-interfaces-named-ui">The interface for user interfaces, named <code>Ui</code><a class="headerlink" href="#the-interface-for-user-interfaces-named-ui" title="Permanent link">&para;</a></h2>
+<p>This section doesn't just writes so many words about how <strong>the <code>Ui</code> interface
+has only 2 properties</strong>. It explains why <strong>it is useful</strong>, how to <strong>use it the right
+way</strong>, and the <strong>possibilities</strong> it offers.</p>
+<p>FYI, the declaration of this interface looks like this:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span> <span class="nc">Ui</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="nv">ctx</span><span class="p">:</span> <span class="n">Context</span>
+    <span class="kd">val</span> <span class="nv">root</span><span class="p">:</span> <span class="n">View</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="why-this-interface">Why this interface<a class="headerlink" href="#why-this-interface" title="Permanent link">&para;</a></h3>
+<p>As said above, you can put your UI code directly in an <code>Activity</code> or a <code>Fragment</code>,
+but the fact you can doesn't mean you should. Mixing UI code with business logic,
+data storage code, network calls and miscellaneous boilerplate in the same
+"god" class will quickly make further work (like feature additions and maintenance)
+very hard, because you're likely not a god programmer, and even if you are, your
+coworkers, or successors, are likely not.</p>
+<p>Xml layouts alleviate this issue by forcing you to put most of your UI code into
+a separate xml file, but you often need complementary code (e.g. to handle
+transitions, dynamic visibility), and this is often put into a <code>Fragment</code> or an
+<code>Activity</code>, which makes things worse, as you now have your UI code spread over
+at least two places that are tightly coupled.</p>
+<h3 id="what-it-is-made-of">What it is made of<a class="headerlink" href="#what-it-is-made-of" title="Permanent link">&para;</a></h3>
+<p>With Splitties Views DSL, there's an <a href="https://github.com/LouisCAD/Splitties/tree/main/modules/views-dsl/src/androidMain/kotlin/splitties/views/dsl/core/Ui.kt">optional interface named <code>Ui</code></a>, whose implementations are meant
+to contain your UI code.</p>
+<p>It has a <code>ctx</code> property because in Android, a <code>Context</code> is needed to create a
+<code>View</code>.
+It has a <code>root</code> property because you need a <code>View</code> to display in the end.</p>
+<p>Since you're using Kotlin code, you can put all the UI related logic in it too,
+in a single place this time.</p>
+<p>Also, since <code>Ui</code> is an interface, you can get creative by creating sub-interfaces
+or sub-classes to have different implementations of the same UI, which is nice for
+A/B testing, user preferences (different styles that the user can pick),
+configuration (like screen orientation), and more.</p>
+<h3 id="implementing-the-ui-interface">Implementing the Ui interface<a class="headerlink" href="#implementing-the-ui-interface" title="Permanent link">&para;</a></h3>
+<p>When writing a <code>Ui</code> implementation, override the <code>ctx</code> property as the first
+constructor parameter (e.g. <code>class MainUi(override val ctx: Context) : Ui {</code>),
+and override the <code>root</code> parameter as a property with a backing field by
+assigning it a <code>View</code> (e.g. <code>override val root = coordinatorLayout { ... }</code>).</p>
+<p>Then create your views (usually putting them as final properties, like <code>root</code>),
+and add them to the <code>ViewGroup</code>s they belong to, so they are direct, or indirect
+children of <code>root</code> (in the likely case where you have multiple views in your UI
+and <code>root</code> is therefore a <code>ViewGroup</code>).</p>
+<h3 id="using-ui-implementations">Using Ui implementations<a class="headerlink" href="#using-ui-implementations" title="Permanent link">&para;</a></h3>
+<p>To use a <code>Ui</code> implementation from an <code>Activity</code> subclass, just call
+<code>setContentView(ui)</code>.
+To use it from any other place, just get the <code>root</code> property. In a <code>Fragment</code>
+subclass, that will mean returning it from <code>onCreateView(…)</code>.</p>
+<p>You can also use any function or property you've declared in your sub-interface
+or implementation.</p>
+<p>Here are two examples:
+* Using a public property of type <code>Button</code> to set it an <code>OnClickListener</code> in
+the place where the <code>Ui</code> is used (like an <code>Activity</code> or a <code>Fragment</code> that connects
+your UI to a <code>ViewModel</code> and any other components).
+* Call a method called <code>animateGoalReached()</code>.</p>
+<h3 id="simple-examples">Simple examples<a class="headerlink" href="#simple-examples" title="Permanent link">&para;</a></h3>
+<p>See concrete examples in <a href="https://github.com/LouisCAD/Splitties/tree/main/samples/android-app/src/androidMain/kotlin/com/example/splitties/main/MainUi.kt"><code>MainUi</code></a> and
+<a href="https://github.com/LouisCAD/Splitties/tree/main/samples/android-app/src/androidMain/kotlin/com/example/splitties/demo/DemoUi.kt"><code>DemoUi</code></a> with
+their respective Activities <a href="https://github.com/LouisCAD/Splitties/tree/main/samples/android-app/src/androidMain/kotlin/com/example/splitties/main/MainActivity.kt"><code>MainActivity</code></a>
+and <a href="https://github.com/LouisCAD/Splitties/tree/main/samples/android-app/src/androidMain/kotlin/com/example/splitties/demo/DemoActivity.kt"><code>DemoActivity</code></a>.</p>
+<h3 id="possibilities-brought-by-the-ui-interface">Possibilities brought by the <code>Ui</code> interface<a class="headerlink" href="#possibilities-brought-by-the-ui-interface" title="Permanent link">&para;</a></h3>
+<h4 id="ide-preview">IDE Preview<a class="headerlink" href="#ide-preview" title="Permanent link">&para;</a></h4>
+<p>With the <code>UiPreView</code> class, you can preview your <code>Ui</code> implementations right from the IDE,
+(requires Android Studio 4.0 or newer).</p>
+<p>You can do it in code and have access to it contextually by selecting the "Split" or "Design" view
+in the top right corner of the editor, or you can do it in xml and benefit from options not yet
+available in <code>View</code> subclasses preview such as configuration switching (night mode, locale, etc).</p>
+<p>While the real app might show actual data, you'll likely want to show sample data in the IDE
+preview. To support this use case in the best way possible such as there's no impact on the
+production code, Splitties brings the <code>isInPreview</code> inline extension property for <code>Ui</code> and <code>View</code>.</p>
+<p>When your app is compiled in release mode, it evaluates to <code>false</code> as a constant value
+(unlike <code>View.isInEditmode</code>), which means that any code path under this condition will be removed by
+the compiler (kotlinc), and R8 or proguard will then remove any extra code that was only used in
+the IDE preview.</p>
+<h5 id="ide-preview-example">IDE Preview Example<a class="headerlink" href="#ide-preview-example" title="Permanent link">&para;</a></h5>
+<p>Below is a preview example in Kotlin that the IDE can display.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">//region IDE preview</span>
+<span class="nd">@Deprecated</span><span class="p">(</span><span class="s">&quot;For IDE preview only&quot;</span><span class="p">,</span> <span class="n">level</span> <span class="o">=</span> <span class="n">DeprecationLevel</span><span class="p">.</span><span class="na">HIDDEN</span><span class="p">)</span>
+<span class="kd">private</span> <span class="kd">class</span> <span class="nc">MainUiImplPreview</span><span class="p">(</span>
+    <span class="n">context</span><span class="p">:</span> <span class="n">Context</span><span class="p">,</span>
+    <span class="n">attrs</span><span class="p">:</span> <span class="n">AttributeSet? </span><span class="o">=</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="n">defStyleAttr</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="m">0</span>
+<span class="p">)</span> <span class="p">:</span> <span class="n">UiPreView</span><span class="p">(</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">context</span><span class="p">.</span><span class="na">withTheme</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">style</span><span class="p">.</span><span class="na">AppTheme</span><span class="p">),</span>
+    <span class="n">attrs</span> <span class="o">=</span> <span class="n">attrs</span><span class="p">,</span>
+    <span class="n">defStyleAttr</span> <span class="o">=</span> <span class="n">defStyleAttr</span><span class="p">,</span>
+    <span class="n">createUi</span> <span class="o">=</span> <span class="p">{</span> <span class="n">MainUiImpl</span><span class="p">(</span><span class="nb">it</span><span class="p">)</span> <span class="p">}</span>
+<span class="p">)</span>
+<span class="c1">//endregion</span>
+</code></pre></div>
+<p>It is surrounded by a "region" so it can be collapsed by the IDE as you can see in the
+screenshot just below.</p>
+<p><img alt="Example screenshot" src="https://github.com/LouisCAD/Splitties/tree/main/modules/views-dsl/Splitties%20View%20DSL%20IDE%20preview%20kotlin%20example.png" /></p>
+<p>Below is a preview xml layout example that the IDE can display.
+It assumes there's a class implementing <code>Ui</code> named <code>MainUi</code> in the <code>main</code>
+subpackage (relative to the app/library package name).</p>
+<p>Beware that for the xml approach, any refactoring changes will not be reflected in the xml file,
+so if you change the package or the name of your <code>Ui</code> implementation class, you'll have to
+remember to edit the xml preview too to keep it working.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;splitties.views.dsl.idepreview.UiPreView</span>
+    <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="na">xmlns:app=</span><span class="s">&quot;http://schemas.android.com/apk/res-auto&quot;</span>
+    <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
+    <span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span>
+    <span class="na">app:splitties_class_package_name_relative=</span><span class="s">&quot;main.MainUi&quot;</span><span class="nt">/&gt;</span>
+</code></pre></div>
+<p>Here's a screenshot of how it looks like with <a href="https://github.com/LouisCAD/Splitties/tree/main/samples/android-app/src/androidMain/kotlin/com/example/splitties/demo/DemoUi.kt">DemoUi from the sample</a> after the
+<code>mergeDebugJavaResource</code> gradle task has been run:</p>
+<p><img alt="Example screenshot" src="https://github.com/LouisCAD/Splitties/tree/main/modules/views-dsl/Splitties%20View%20DSL%20IDE%20preview%20xml%20example.png" /></p>
+<h5 id="important-info-regarding-xml-based-ide-preview">Important info regarding xml based IDE Preview<a class="headerlink" href="#important-info-regarding-xml-based-ide-preview" title="Permanent link">&para;</a></h5>
+<h6 id="interfaces-parameters">Interfaces parameters<a class="headerlink" href="#interfaces-parameters" title="Permanent link">&para;</a></h6>
+<p>In order for the xml preview to work, your <code>Ui</code> subclass need to have its first parameter of type <code>Context</code>.
+For the subsequent parameters (if applicable), any <code>interface</code> is supported, but its methods need to
+not be called when this view is created and drawn, or an exception will be thrown.</p>
+<p>A special support has been added for <code>CoroutineContext</code> and <code>CoroutineScope</code>, so there's no
+exception thrown if you use an <code>actor</code> or other code relying on coroutines at init or drawing time.</p>
+<h6 id="known-issues-and-their-workaround">Known issues and their workaround<a class="headerlink" href="#known-issues-and-their-workaround" title="Permanent link">&para;</a></h6>
+<ul>
+<li>If preview doesn't work or doesn't reflect latest changes, it's likely
+because you didn't execute the <code>mergeDebugJavaResource</code> gradle task on your project (module actually).
+IDE preview currently only works with compiled classes and xml layouts. Running the
+<code>mergeDebugJavaResource</code> gradle task will save you time as it doesn't involve all the subsequent tasks
+that package a full apk.</li>
+</ul>
+<h6 id="finding-a-suitable-constructor-to-instantiate-your-ui">Finding a suitable constructor to instantiate your UI<a class="headerlink" href="#finding-a-suitable-constructor-to-instantiate-your-ui" title="Permanent link">&para;</a></h6>
+<p><code>UiPreView</code> is compatible with <code>Ui</code> implementations with two kind of
+constructors:
+* Constructors with a single <code>Context</code> parameter.
+* Constructors whose first parameter is a <code>Context</code> and other parameters are
+interfaces. Note that the interface methods need to not be called during
+preview, or an <code>UnsupportedOperationException</code> will be raised because
+<code>UiPreView</code> can only create stub implementations. You can use
+<code>View.isInEditMode</code> to skip code for preview if really needed.</p>
+<h6 id="finding-the-class">Finding the class<a class="headerlink" href="#finding-the-class" title="Permanent link">&para;</a></h6>
+<p>When using the <code>splitties_class_package_name_relative</code> attribute, the
+<code>UiPreView</code> class will take the <code>packageName</code> returned from the <code>Context</code>
+and append a dot plus the value of the attribute to get the class name of
+your <code>Ui</code> implementation.</p>
+<p>However, you may have configured your build so your debug buildType has an
+applicationId suffix that is usually <code>.debug</code> like show in the example below:
+<div class="highlight"><pre><span></span><code><span class="n">buildTypes</span> <span class="o">{</span>
+    <span class="n">debug</span> <span class="o">{</span>
+        <span class="n">applicationIdSuffix</span> <span class="s2">&quot;.debug&quot;</span> <span class="c1">// This changes the packageName returned from a Context</span>
+        <span class="n">versionNameSuffix</span> <span class="s2">&quot;-DEBUG&quot;</span>
+    <span class="o">}</span>
+    <span class="n">release</span> <span class="o">{</span>
+        <span class="c1">// Config of your release build</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+That's why by default, the
+<code>UiPreView</code> class will drop any <code>.debug</code> suffix found in the package name
+before trying to instantiate the class. If you use another suffix, or have
+other suffixes for other debuggable buildTypes, or use productFlavors, you're
+in luck! The package name suffix to drop is configurable from your resources.</p>
+<p>Just copy paste the string resource below in your project in a value resource
+file named something like <code>config.xml</code> or <code>do_not_translate.xml</code>, and edit it
+to the suffix you use:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">&quot;splitties_views_dsl_ide_preview_package_name_suffix&quot;</span> <span class="na">translatable=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>.debug<span class="nt">&lt;/string&gt;</span>
+</code></pre></div>
+<p>This will override the default value from the library.</p>
+<p>You can also override the <code>splitties_ui_preview_base_package_names</code> string array resource and add
+all the base package names where you have implementations of the <code>Ui</code> interface you want to preview.
+You can see such <a href="https://github.com/LouisCAD/Splitties/tree/main/samples/android-app/src/debug/res/values/splitties_ui_preview_config.xml">an example in the sample here</a>.
+This can be handy if you change the <code>applicationId</code>, or if you have a modularized codebase.</p>
+<p>Alternatively, you can use the <code>splitties_class_fully_qualified_name</code>
+attribute instead and specify the full class name with its package.</p>
+<h4 id="modular-user-interface-contracts">Modular user interface contracts<a class="headerlink" href="#modular-user-interface-contracts" title="Permanent link">&para;</a></h4>
+<p>While having a dedicated class for user interface, that is agnostic
+from where it will be used (Activity, Fragment, IDE Preview…), is a
+great first step to a modular user interface code, you can go further.</p>
+<p>Instead of exposing your <code>Ui</code> implementation directly to the Activity or
+Fragment, you can decide to write several interfaces that define a contract
+that your Activity, Fragment, ViewModel (beware of leaks), or whatever will
+need, and implement all of these with one or more classes.</p>
+<p>For example, let's say you are developing an email app. You write two interfaces:
+<code>InboxUi</code> and <code>ComposeUi</code> that both extend the <code>Ui</code> interface. You add to the
+interfaces all the functions (including any <code>suspend fun</code>), properties and other
+symbols you may need to expose to the Activity, Fragment, ViewModel or whatever.
+Then you implement these two interfaces, with either one class or two, depending
+on whether you want to display them separately or not.</p>
+<h4 id="easier-multi-form-factors-support">Easier multi form factors support<a class="headerlink" href="#easier-multi-form-factors-support" title="Permanent link">&para;</a></h4>
+<p>Modular UI contracts open the door to a great benefit: an easier way to
+support multiple form factors (smartphones, smartwatches, tablets, laptops, cars…).</p>
+<p>In the previous example, we highlighted the fact that you could have multiple
+interfaces that expose the needed symbols, and then decide to implement these
+interfaces in one, or multiple classes.</p>
+<p>This can help you support different form factors with zero, or only a few
+changes in non-UI code as it is no longer relies on a specific implementation.</p>
+<p>It is planned to add such examples in the samples of this repository.
+If you want to have them faster, please open an issue so the examples can be
+discussed. Also, maybe you, or someone you know, can contribute.</p>
+<h4 id="multiplatform-user-interface-contracts">Multiplatform user interface contracts<a class="headerlink" href="#multiplatform-user-interface-contracts" title="Permanent link">&para;</a></h4>
+<p>Here's an example of how you may write multiplatform user interface contracts:</p>
+<p>In Kotlin common code, you would write an interface that is platform agnostic
+but declares the needed symbols that all platforms can share:</p>
+<p>Continuing our email app example, you would write these two interfaces:
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span> <span class="nc">InboxUiContract</span> <span class="p">{</span>
+    <span class="c1">// Whatever you need</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span> <span class="nc">ComposeUiContract</span> <span class="p">{</span>
+    <span class="c1">// Whatever you need</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>Then write to sub-interfaces for each platform you want to support, Android and
+iOS in this example:
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span> <span class="nc">AndroidInboxUi</span> <span class="p">:</span> <span class="n">InboxUiContract</span><span class="p">,</span> <span class="n">Ui</span>
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span> <span class="nc">IOSInboxUi</span> <span class="p">:</span> <span class="n">InboxUiContract</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="nv">root</span><span class="p">:</span> <span class="n">UIView</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>And you may finally implement them for each platform, still supporting multiple
+form-factors and platform variants if needed.</p>
+<p><em>The two common interfaces (<code>InboxUiContract</code> and <code>ComposeUiContract</code>) could
+be replaced by abstract classes in case you need to have backing fields, final
+declarations or final implementations, as long as they don't reference
+Splitties <code>Ui</code> interface and no platform specific code.</em></p>
+<h4 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h4>
+<p>Having your user interface as an <code>interface</code> can make it easy to mock it, and
+simulate user interactions for testing purposes.</p>
+<h4 id="redesign">Redesign<a class="headerlink" href="#redesign" title="Permanent link">&para;</a></h4>
+<p>If you expect an <code>interface</code> for the user interface, then it becomes easy to
+replace an implementation by another one in case you're redesigning your app.
+You can also split your UI contracts (the <code>interface</code>s) into smaller subsets
+before starting a redesign if needed, this can be helpful if you want to move
+some UI controls to another area of the application, or just organize things
+differently.</p>
+<h4 id="ab-testing">A/B Testing<a class="headerlink" href="#ab-testing" title="Permanent link">&para;</a></h4>
+<p>When you have multiple UI <code>interface</code>s implementations, you can then swap them
+at runtime for A/B testing, allowing you to test which UI works the best for
+what you determined.</p>
+<h2 id="additional-modules">Additional modules<a class="headerlink" href="#additional-modules" title="Permanent link">&para;</a></h2>
+<p><strong>There are additional splits for extended support. Views DSL…</strong>
+* <a href="../views-dsl-appcompat">AppCompat</a> provides proper styling to <code>Button</code>,
+<code>TextView</code>, <code>EditText</code> and other widgets.
+views like <code>coloredFlatButton</code>.
+* <a href="../views-dsl-constraintlayout">ConstraintLayout</a> provides support for
+<code>ConstraintLayout.LayoutParams</code>.
+<code>ViewGroup</code>s and bottom sheets.
+* <a href="../views-dsl-ide-preview">IDE preview</a> provides the ability to preview your
+user interfaces right from the IDE.
+* <a href="../views-dsl-material">Material</a> provides extensions for Material Components
+* <a href="../views-dsl-recyclerview">RecyclerView</a> provides extensions to have
+scrollbars and proper <code>itemView</code> layout parameters.</p>
+<h2 id="download">Download<a class="headerlink" href="#download" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">implementation</span><span class="o">(</span><span class="s2">&quot;com.louiscad.splitties:splitties-views-dsl:$splitties_version&quot;</span><span class="o">)</span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../views-coroutines-material/index.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Views Coroutines Material" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Views Coroutines Material
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../views-dsl-appcompat/index.html" class="md-footer__link md-footer__link--next" aria-label="Next: Views DSL AppCompat" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Views DSL AppCompat
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © 2021 Louis CAD
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
+      
+    
+  </body>
+</html>

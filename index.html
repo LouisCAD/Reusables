@@ -1,0 +1,1808 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Life is too short to google for dependencies and versions">
+      
+      
+      
+        <meta name="author" content="LouisCAD">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.10">
+    
+    
+      
+        <title>Splitties</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.1fe995fd.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4cae4f">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="blue">
+  
+    
+    <script>function __prefix(e){return new URL(".",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#splitties" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Splitties" class="md-header__button md-logo" aria-label="Splitties" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Splitties
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/LouisCAD/Splitties/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    LouisCAD/Splitties
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Splitties" class="md-nav__button md-logo" aria-label="Splitties" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Splitties
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/LouisCAD/Splitties/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    LouisCAD/Splitties
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Overview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="index.html" class="md-nav__link md-nav__link--active">
+        Overview
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-few-examples" class="md-nav__link">
+    A few examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-interaction-android-only" class="md-nav__link">
+    System interaction (Android only):
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-input-and-user-interface-related-splits" class="md-nav__link">
+    User input and user interface related splits:
+  </a>
+  
+    <nav class="md-nav" aria-label="User input and user interface related splits:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#small-messages-android-only" class="md-nav__link">
+    Small messages (Android only)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dialogs-android-only" class="md-nav__link">
+    Dialogs (Android only)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-ui-android-only" class="md-nav__link">
+    System UI (Android only)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extensions-for-views-android-only" class="md-nav__link">
+    Extensions for Views (Android only)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-view-based-uis-with-the-power-of-kotlin-android-only" class="md-nav__link">
+    Creating View based UIs with the power of Kotlin (Android only)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#various-ui-utilities-android-only" class="md-nav__link">
+    Various UI utilities (Android only)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-design-helpers-android-only" class="md-nav__link">
+    Material Design helpers (Android only)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inter-and-cross-app-communication-activities-fragments-intents-and-bundles" class="md-nav__link">
+    Inter and cross app communication: Activities, Fragments, Intents, and Bundles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concurrency-multiplatform" class="md-nav__link">
+    Concurrency (Multiplatform)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-persistence-multiplatform" class="md-nav__link">
+    Data persistence (Multiplatform)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilities-multiplatform" class="md-nav__link">
+    Utilities (Multiplatform)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-android-only" class="md-nav__link">
+    Debugging (Android only)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#legacy-android-only" class="md-nav__link">
+    Legacy (Android only)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download" class="md-nav__link">
+    Download
+  </a>
+  
+    <nav class="md-nav" aria-label="Download">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gradle-instructions" class="md-nav__link">
+    Gradle instructions
+  </a>
+  
+    <nav class="md-nav" aria-label="Gradle instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#android-base" class="md-nav__link">
+    Android base
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#android-appcompat" class="md-nav__link">
+    Android AppCompat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#android-material-components" class="md-nav__link">
+    Android Material Components
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#all-the-artifacts-47" class="md-nav__link">
+    All the artifacts (47)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snapshots" class="md-nav__link">
+    Snapshots
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-versions-notifications" class="md-nav__link">
+    New versions notifications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#improve-this-library" class="md-nav__link">
+    Improve this library
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-split" class="md-nav__link">
+    What is a split
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#credits" class="md-nav__link">
+    Credits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    License
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Modules
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Modules" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/activities/index.html" class="md-nav__link">
+        Activities
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/alertdialog/index.html" class="md-nav__link">
+        Alert Dialog
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/alertdialog-appcompat/index.html" class="md-nav__link">
+        Alert Dialog AppCompat
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/alertdialog-appcompat-coroutines/index.html" class="md-nav__link">
+        Alert Dialog AppCompat Coroutines
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/alertdialog-material/index.html" class="md-nav__link">
+        Alert Dialog Material
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/appctx/index.html" class="md-nav__link">
+        App Context
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/arch-lifecycle/index.html" class="md-nav__link">
+        Arch Lifecycle
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/arch-room/index.html" class="md-nav__link">
+        Arch Room
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/bitflags/index.html" class="md-nav__link">
+        Bit Flags
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/bundle/index.html" class="md-nav__link">
+        Bundle
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/collections/index.html" class="md-nav__link">
+        Collections
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/coroutines/index.html" class="md-nav__link">
+        Coroutines
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/checkedlazy/index.html" class="md-nav__link">
+        Checked Lazy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/dimensions/index.html" class="md-nav__link">
+        Dimensions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/exceptions/index.html" class="md-nav__link">
+        Exceptions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/fragments/index.html" class="md-nav__link">
+        Fragments
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/fragmentargs/index.html" class="md-nav__link">
+        Fragment Args
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/initprovider/index.html" class="md-nav__link">
+        Init Provider
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/intents/index.html" class="md-nav__link">
+        Intents
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/lifecycle-coroutines/index.html" class="md-nav__link">
+        Lifecycle Coroutines
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/mainhandler/index.html" class="md-nav__link">
+        Main Handler
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/mainthread/index.html" class="md-nav__link">
+        Main Thread
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/material-colors/index.html" class="md-nav__link">
+        Material Colors
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/material-lists/index.html" class="md-nav__link">
+        Material Lists
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/preferences/index.html" class="md-nav__link">
+        Preferences
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/permissions/index.html" class="md-nav__link">
+        Permissions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/resources/index.html" class="md-nav__link">
+        Resources
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/views-selectable/index.html" class="md-nav__link">
+        Selectable Views
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/views-selectable-appcompat/index.html" class="md-nav__link">
+        Selectable Views AppCompat
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/views-selectable-constraintlayout/index.html" class="md-nav__link">
+        Selectable Views ConstraintLayout
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/snackbar/index.html" class="md-nav__link">
+        Snackbar
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/stetho-init/index.html" class="md-nav__link">
+        Stetho init
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/systemservices/index.html" class="md-nav__link">
+        System Services
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/toast/index.html" class="md-nav__link">
+        Toast
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/typesaferecyclerview/index.html" class="md-nav__link">
+        Typesafe RecyclerView
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/views/index.html" class="md-nav__link">
+        Views
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/views-appcompat/index.html" class="md-nav__link">
+        Views AppCompat
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/views-cardview/index.html" class="md-nav__link">
+        Views CardView
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/views-coroutines/index.html" class="md-nav__link">
+        Views Coroutines
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/views-coroutines-material/index.html" class="md-nav__link">
+        Views Coroutines Material
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/views-dsl/index.html" class="md-nav__link">
+        Views DSL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/views-dsl-appcompat/index.html" class="md-nav__link">
+        Views DSL AppCompat
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/views-dsl-constraintlayout/index.html" class="md-nav__link">
+        Views DSL ConstraintLayout
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/views-dsl-coordinatorlayout/index.html" class="md-nav__link">
+        Views DSL CoordinatorLayout
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/views-dsl-material/index.html" class="md-nav__link">
+        Views DSL Material
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/views-dsl-recyclerview/index.html" class="md-nav__link">
+        Views DSL RecyclerView
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/views-material/index.html" class="md-nav__link">
+        Views Material
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/views-recyclerview/index.html" class="md-nav__link">
+        Views RecyclerView
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CHANGELOG.html" class="md-nav__link">
+        Change Log
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-few-examples" class="md-nav__link">
+    A few examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-interaction-android-only" class="md-nav__link">
+    System interaction (Android only):
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-input-and-user-interface-related-splits" class="md-nav__link">
+    User input and user interface related splits:
+  </a>
+  
+    <nav class="md-nav" aria-label="User input and user interface related splits:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#small-messages-android-only" class="md-nav__link">
+    Small messages (Android only)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dialogs-android-only" class="md-nav__link">
+    Dialogs (Android only)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-ui-android-only" class="md-nav__link">
+    System UI (Android only)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extensions-for-views-android-only" class="md-nav__link">
+    Extensions for Views (Android only)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-view-based-uis-with-the-power-of-kotlin-android-only" class="md-nav__link">
+    Creating View based UIs with the power of Kotlin (Android only)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#various-ui-utilities-android-only" class="md-nav__link">
+    Various UI utilities (Android only)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-design-helpers-android-only" class="md-nav__link">
+    Material Design helpers (Android only)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inter-and-cross-app-communication-activities-fragments-intents-and-bundles" class="md-nav__link">
+    Inter and cross app communication: Activities, Fragments, Intents, and Bundles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concurrency-multiplatform" class="md-nav__link">
+    Concurrency (Multiplatform)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-persistence-multiplatform" class="md-nav__link">
+    Data persistence (Multiplatform)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilities-multiplatform" class="md-nav__link">
+    Utilities (Multiplatform)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-android-only" class="md-nav__link">
+    Debugging (Android only)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#legacy-android-only" class="md-nav__link">
+    Legacy (Android only)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download" class="md-nav__link">
+    Download
+  </a>
+  
+    <nav class="md-nav" aria-label="Download">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gradle-instructions" class="md-nav__link">
+    Gradle instructions
+  </a>
+  
+    <nav class="md-nav" aria-label="Gradle instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#android-base" class="md-nav__link">
+    Android base
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#android-appcompat" class="md-nav__link">
+    Android AppCompat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#android-material-components" class="md-nav__link">
+    Android Material Components
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#all-the-artifacts-47" class="md-nav__link">
+    All the artifacts (47)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snapshots" class="md-nav__link">
+    Snapshots
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-versions-notifications" class="md-nav__link">
+    New versions notifications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#improve-this-library" class="md-nav__link">
+    Improve this library
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-split" class="md-nav__link">
+    What is a split
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#credits" class="md-nav__link">
+    Credits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    License
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/LouisCAD/Splitties/edit/main/README.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="splitties">Splitties<a class="headerlink" href="#splitties" title="Permanent link">&para;</a></h1>
+<p>Splitties is a collection of small Kotlin multiplatform libraries (with Android as first target).</p>
+<p>These libraries are intended to reduce the amount of code you have to write, freeing code reading and writing
+time, so you can focus more on what you want to build for your users (even if you're the only one), or
+have more time to have <code>fun</code>.</p>
+<p>This project is named "Splitties" because it is split in small modules,
+distributed as independent libraries, so you can add only the ones
+you need to your project/module, helping reduce the size of the final binary that users devices
+will need to download and keep in the limited storage (BTW, everything is limited).</p>
+<p>Some Android targeting modules have a content similar to what <a href="https://github.com/Kotlin/anko">Anko</a> offers.
+See <a href="Comparison_with_anko.html">a short comparison of Splitties with Anko here</a>.</p>
+<p>Each module has been designed to have a <strong>small footprint</strong> and be as <strong>efficient</strong> as possible.</p>
+<h2 id="a-few-examples">A few examples<a class="headerlink" href="#a-few-examples" title="Permanent link">&para;</a></h2>
+<p>Splitties is all about simplifying your code. Here are a few examples:</p>
+<p><strong>Kotlin:</strong>
+<div class="highlight"><pre><span></span><code><span class="n">startActivity</span><span class="p">(</span><span class="n">Intent</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">DemoActivity</span><span class="o">::</span><span class="n">class</span><span class="p">.</span><span class="na">java</span><span class="p">))</span>
+</code></pre></div></p>
+<p><strong>Kotlin with Splitties <a href="modules/activities">Activities</a>:</strong>
+<div class="highlight"><pre><span></span><code><span class="n">start</span><span class="o">&lt;</span><span class="n">DemoActivity</span><span class="o">&gt;</span><span class="p">()</span>
+</code></pre></div></p>
+<hr />
+<p><strong>Kotlin:</strong>
+<div class="highlight"><pre><span></span><code><span class="n">Snackbar</span><span class="p">.</span><span class="na">make</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">refresh_successful</span><span class="p">,</span> <span class="n">Snackbar</span><span class="p">.</span><span class="na">LENGTH_SHORT</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">show</span><span class="p">()</span>
+</code></pre></div></p>
+<p><strong>Kotlin with Splitties <a href="modules/snackbar">Snackbar</a>:</strong>
+<div class="highlight"><pre><span></span><code><span class="n">root</span><span class="p">.</span><span class="na">snack</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">refresh_successful</span><span class="p">)</span>
+</code></pre></div></p>
+<hr />
+<p><strong>Racing coroutines:</strong> (<code>raceOf(…)</code> comes from <a href="modules/coroutines">the Coroutines module</a>)</p>
+<div class="highlight"><pre><span></span><code><span class="kd">suspend</span> <span class="kd">fun</span> <span class="nf">awaitUserChoice</span><span class="p">(</span><span class="n">ui</span><span class="p">:</span> <span class="n">SomeUi</span><span class="p">,</span> <span class="n">choices</span><span class="p">:</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Stuff</span><span class="o">&gt;</span><span class="p">):</span> <span class="n">Stuff? </span><span class="o">=</span> <span class="n">raceOf</span><span class="p">({</span>
+    <span class="n">ui</span><span class="p">.</span><span class="na">awaitSomeUserAction</span><span class="p">(</span><span class="n">choices</span><span class="p">)</span>
+<span class="p">},</span> <span class="p">{</span>
+    <span class="n">ui</span><span class="p">.</span><span class="na">awaitDismissal</span><span class="p">()</span>
+    <span class="kc">null</span>
+<span class="p">},</span> <span class="p">{</span>
+    <span class="n">ui</span><span class="p">.</span><span class="na">showSomethingInRealtimeUntilCancelled</span><span class="p">()</span> <span class="c1">// Returns Nothing, will run, but never &quot;win&quot;.</span>
+<span class="p">})</span>
+</code></pre></div>
+<hr />
+<p><strong>Kotlin:</strong>
+<div class="highlight"><pre><span></span><code><span class="n">Snackbar</span><span class="p">.</span><span class="na">make</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">getString</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">deleted_x_items</span><span class="p">,</span> <span class="n">deletedCount</span><span class="p">),</span> <span class="n">Snackbar</span><span class="p">.</span><span class="na">LENGTH_LONG</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setAction</span><span class="p">(</span><span class="n">android</span><span class="p">.</span><span class="na">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">cancel</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">deleteOperation</span><span class="p">.</span><span class="na">requestRollback</span><span class="p">()</span>
+    <span class="p">}</span>
+    <span class="p">.</span><span class="na">setActionTextColor</span><span class="p">(</span><span class="n">ContextCompat</span><span class="p">.</span><span class="na">getColor</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">R</span><span class="p">.</span><span class="na">color</span><span class="p">.</span><span class="na">fancy_color</span><span class="p">))</span>
+    <span class="p">.</span><span class="na">show</span><span class="p">()</span>
+</code></pre></div></p>
+<p><strong>Kotlin with Splitties <a href="modules/snackbar">Snackbar</a>:</strong>
+<div class="highlight"><pre><span></span><code><span class="n">root</span><span class="p">.</span><span class="na">longSnack</span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">deleted_x_items</span><span class="p">,</span> <span class="n">deletedCount</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">action</span><span class="p">(</span><span class="n">android</span><span class="p">.</span><span class="na">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">cancel</span><span class="p">,</span> <span class="n">textColor</span> <span class="o">=</span> <span class="n">color</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">color</span><span class="p">.</span><span class="na">fancy_color</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">deleteOperation</span><span class="p">.</span><span class="na">requestRollback</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<hr />
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="#system-interaction-android-only">System interaction (Android only)</a></li>
+<li><a href="#user-input-and-user-interface-related-splits">User input and user interface related splits</a><ul>
+<li><a href="#small-messages-android-only">Small messages (Android only)</a></li>
+<li><a href="#dialogs-android-only">Dialogs (Android only)</a></li>
+<li><a href="#system-ui-android-only">System UI (Android only)</a></li>
+<li><a href="#extensions-for-views-android-only">Extensions for Views (Android only)</a></li>
+<li><a href="#creating-view-based-uis-with-the-power-of-kotlin-android-only">Creating View based UIs with the power of Kotlin (Android only)</a></li>
+<li><a href="#various-ui-utilities-android-only">Various UI utilities (Android only)</a></li>
+<li><a href="#various-ui-utilities-android-only">Material Design helpers (Android only)</a></li>
+</ul>
+</li>
+<li><a href="#inter-and-cross-app-communication-activities-fragments-intents-and-bundles">Inter and cross app communication: Activities, Fragments, Intents, and Bundles</a></li>
+<li><a href="#concurrency-multiplatform">Concurrency (Multiplatform)</a></li>
+<li><a href="#data-persistence-multiplatform">Data persistence (Multiplatform)</a></li>
+<li><a href="#utilities-multiplatform">Utilities (Multiplatform)</a></li>
+<li><a href="#debugging-android-only">Debugging (Android only)</a></li>
+<li><a href="#legacy-android-only">Legacy (Android only)</a></li>
+</ul>
+<h2 id="system-interaction-android-only">System interaction (Android only):<a class="headerlink" href="#system-interaction-android-only" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><a href="modules/appctx">App Context:</a></strong> Always have your application <code>Context</code> at hand with <code>appCtx</code>.</li>
+<li><strong><a href="modules/systemservices">System Services:</a></strong> No more <code>context.getSystemService(NAME_OF_SERVICE) as NameOfManager</code>.</li>
+</ul>
+<h2 id="user-input-and-user-interface-related-splits">User input and user interface related splits:<a class="headerlink" href="#user-input-and-user-interface-related-splits" title="Permanent link">&para;</a></h2>
+<h3 id="small-messages-android-only">Small messages (Android only)<a class="headerlink" href="#small-messages-android-only" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><a href="modules/snackbar">Snackbar:</a></strong> Grab a snack without ceremony with <code>snack(…)</code> and <code>longSnack(…)</code>.</li>
+<li><strong><a href="modules/toast">Toast:</a></strong> Show a toast by just calling <code>toast(yourText)</code>, and dodge <a href="https://github.com/drakeet/ToastCompat#why">API 25
+  <code>BadTokenException</code></a>.</li>
+</ul>
+<h3 id="dialogs-android-only">Dialogs (Android only)<a class="headerlink" href="#dialogs-android-only" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><a href="modules/alertdialog">Alert Dialog:</a></strong> Create simple alert dialogs with simple code.</li>
+<li><strong><a href="modules/alertdialog-appcompat">Alert Dialog AppCompat:</a></strong> AppCompat version of
+  <a href="modules/alertdialog">Alert Dialog</a>.</li>
+<li><strong><a href="modules/alertdialog-appcompat-coroutines">Alert Dialog AppCompat Coroutines:</a></strong>
+  <code>showAndAwait</code> extension functions for AppCompat AlertDialog.</li>
+<li><strong><a href="modules/alertdialog-appcompat">Alert Dialog Material:</a></strong> Material Components extension of
+  <a href="modules/alertdialog-appcompat">Alert Dialog AppCompat</a>.</li>
+</ul>
+<h3 id="system-ui-android-only">System UI (Android only)<a class="headerlink" href="#system-ui-android-only" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><a href="modules/permissions">Dangerous permissions:</a></strong> Request runtime permissions without polluting your codebase.</li>
+</ul>
+<h3 id="extensions-for-views-android-only">Extensions for Views (Android only)<a class="headerlink" href="#extensions-for-views-android-only" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><a href="modules/views">Views:</a></strong> Extensions function and properties on <code>View</code>s.</li>
+<li><strong><a href="modules/views-appcompat">Views AppCompat:</a></strong> AppCompat extension of <a href="modules/views">Views</a>. Includes helpers for <code>ImageView</code> tinting, <code>ActionBar</code> and tooltip.</li>
+<li><strong><a href="modules/views-cardview">Views CardView:</a></strong> CardView extension of <a href="modules/views">Views</a>. Provides a <code>contentPadding</code> property.</li>
+<li><strong><a href="modules/views-material">Views Material:</a></strong> Material Components extension of <a href="modules/views">Views</a>.</li>
+<li><strong><a href="modules/views-coroutines-material">Views Coroutines Material:</a></strong> Material Components + Kotlin coroutines.</li>
+<li><strong><a href="modules/views-recyclerview">Views RecyclerView:</a></strong> RecyclerView extension of <a href="modules/views">Views</a>.</li>
+<li><strong><a href="modules/views-coroutines">Views Coroutines:</a></strong> Android Views + Kotlin coroutines.</li>
+</ul>
+<h3 id="creating-view-based-uis-with-the-power-of-kotlin-android-only">Creating View based UIs with the power of Kotlin (Android only)<a class="headerlink" href="#creating-view-based-uis-with-the-power-of-kotlin-android-only" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><a href="modules/views-dsl">Views DSL:</a></strong> Create UIs with readable Kotlin code (IDE preview supported).</li>
+<li><strong><a href="modules/views-dsl-appcompat">Views DSL AppCompat:</a></strong> AppCompat extension of <a href="modules/views-dsl">Views DSL</a>.</li>
+<li><strong><a href="modules/views-dsl-constraintlayout">Views DSL ConstraintLayout:</a></strong> ConstraintLayout extension of
+  <a href="modules/views-dsl">Views DSL</a>.</li>
+<li><strong><a href="modules/views-dsl-coordinatorlayout">Views DSL CoordinatorLayout:</a></strong> CoordinatorLayout extension of
+  <a href="modules/views-dsl">Views DSL</a>.</li>
+<li><strong><a href="modules/views-dsl-material">Views DSL Material:</a></strong> Material Components extension of <a href="modules/views-dsl">Views DSL</a>.</li>
+<li><strong><a href="modules/views-dsl-recyclerview">Views DSL RecyclerView:</a></strong> RecyclerView extension of <a href="modules/views-dsl">Views DSL</a>.</li>
+</ul>
+<h3 id="various-ui-utilities-android-only">Various UI utilities (Android only)<a class="headerlink" href="#various-ui-utilities-android-only" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><a href="modules/resources">Resources:</a></strong> Extensions to get resources like strings, colors or drawables easily,
+  with support for themed attributes.</li>
+<li><strong><a href="modules/dimensions">Dimensions:</a></strong> Android <code>dp</code> extensions for <code>View</code> and <code>Context</code>.
+  Particularly handy when using <a href="modules/views-dsl">Views DSL</a>.</li>
+<li>Selectable views<ul>
+<li><strong><a href="modules/views-selectable">Selectable Views:</a></strong> Selectable Views with <code>foreground</code> property before API 23.</li>
+<li><strong><a href="modules/views-selectable-appcompat">Selectable Views AppCompat:</a></strong> <a href="modules/views-selectable">Selectable Views</a> for AppCompatTextView.</li>
+<li><strong><a href="modules/views-selectable-constraintlayout">Selectable Views ConstraintLayout:</a></strong> <a href="modules/views-selectable">Selectable Views</a> for ConstraintLayout.</li>
+</ul>
+</li>
+<li><strong><a href="modules/typesaferecyclerview">Typesafe RecyclerView:</a></strong> Typesafe <code>ViewHolder</code> and <code>ItemViewHolder</code> for easy basic usage of <code>RecyclerView</code>.</li>
+</ul>
+<h3 id="material-design-helpers-android-only">Material Design helpers (Android only)<a class="headerlink" href="#material-design-helpers-android-only" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><a href="modules/material-colors">Material Colors:</a></strong> <a href="https://material.io/design/color/#tools-for-picking-colors">2014 Material Design color palettes</a> as color resources.</li>
+<li><strong><a href="modules/material-lists">Material Lists:</a></strong> List item Views implementing <a href="https://material.io/guidelines">Material Design guidelines</a> (perfect for usage in a <code>RecyclerView</code>).</li>
+</ul>
+<h2 id="inter-and-cross-app-communication-activities-fragments-intents-and-bundles">Inter and cross app communication: Activities, Fragments, Intents, and Bundles<a class="headerlink" href="#inter-and-cross-app-communication-activities-fragments-intents-and-bundles" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><a href="modules/activities">Activities:</a></strong> Start activities with minimal boilerplate.</li>
+<li><strong><a href="modules/intents">Intents:</a></strong> Transform <code>companion object</code>s into powerful typesafe intent specs,
+  and create <code>PendingIntent</code>s the clean and easy way.</li>
+<li><strong><a href="modules/fragments">Fragments:</a></strong> Start activities from fragments and do transactions with
+  minimal boilerplate.</li>
+<li><strong><a href="modules/fragmentargs">Fragment Args:</a></strong> Fragment arguments without ceremony thanks to
+  delegated properties.</li>
+<li><strong><a href="modules/bundle">Bundle:</a></strong> <code>BundleSpec</code> to use <code>Bundle</code> with property syntax for <code>Intent</code>
+  extras and more.</li>
+</ul>
+<h2 id="concurrency-multiplatform">Concurrency (Multiplatform)<a class="headerlink" href="#concurrency-multiplatform" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><a href="modules/coroutines">Coroutines:</a></strong> General purpose extensions to kotlinx.coroutines.</li>
+<li><strong><a href="modules/lifecycle-coroutines">Lifecycle Coroutines (Android only):</a></strong> Coroutines integration with AndroidX
+  <a href="https://developer.android.com/reference/kotlin/androidx/lifecycle/Lifecycle"><code>Lifecycle</code></a>.</li>
+<li><strong><a href="modules/mainthread">Main Thread:</a></strong> Properties and precondition checkers related to the main thread.</li>
+<li><strong><a href="modules/mainhandler">Main Handler (Android only):</a></strong> Top-level <code>mainHandler</code> property to stop allocating multiple
+  <code>Handler</code>s for main <code>Looper</code>.</li>
+<li><strong><a href="modules/checkedlazy">Checked Lazy (Android only):</a></strong> <code>mainThreadLazy</code> that checks property access on</li>
+</ul>
+<h2 id="data-persistence-multiplatform">Data persistence (Multiplatform)<a class="headerlink" href="#data-persistence-multiplatform" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><a href="modules/preferences">Preferences:</a></strong> Property syntax for Android's <code>SharedPreferences</code> and macOS/iOS/watchOS <code>NSUserDefaults</code>. <strong>NOTE:</strong> For Android, consider using <a href="https://developer.android.com/topic/libraries/architecture/datastore">AndroidX DataStore</a>.</li>
+<li><strong><a href="modules/arch-room">Arch Room:</a></strong> Room helpers to instantiate your DB and perform
+  transactions in Kotlin.</li>
+</ul>
+<h2 id="utilities-multiplatform">Utilities (Multiplatform)<a class="headerlink" href="#utilities-multiplatform" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><a href="modules/bitflags">Bit Flags:</a></strong> <code>hasFlag</code>, <code>withFlag</code> and <code>minusFlag</code> extensions on <code>Long</code>, <code>Int</code>, <code>Short</code>, <code>Byte</code>, and their unsigned counterparts.</li>
+<li><strong><a href="modules/collections">Collections:</a></strong> <code>forEach</code> for <code>List</code>s without <code>Iterator</code> allocation.</li>
+</ul>
+<h2 id="debugging-android-only">Debugging (Android only)<a class="headerlink" href="#debugging-android-only" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><a href="modules/stetho-init">Stetho init:</a></strong> Have <a href="https://github.com/facebook/stetho">Stetho</a> for your debug
+  builds, without writing any code!</li>
+</ul>
+<h2 id="legacy-android-only">Legacy (Android only)<a class="headerlink" href="#legacy-android-only" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><a href="modules/exceptions">Exceptions:</a></strong> <code>unexpectedValue(…)</code>, <code>unsupportedAction(…)</code> and similar
+  functions that return <code>Nothing</code>.</li>
+<li><strong><a href="modules/arch-lifecycle">Arch Lifecycle:</a></strong> Extensions to get <code>ViewModel</code>s, use <code>LiveData</code> and
+  observe <code>Lifecycle</code>s.</li>
+</ul>
+<h2 id="download">Download<a class="headerlink" href="#download" title="Permanent link">&para;</a></h2>
+<h3 id="gradle-instructions">Gradle instructions<a class="headerlink" href="#gradle-instructions" title="Permanent link">&para;</a></h3>
+<p>Make sure you have <code>mavenCentral()</code> in the repositories defined in your project's
+(root) <code>build.gradle</code> file (default for new Android Studio projects).</p>
+<p>To make is easier to take advantage of the contents of Splitties for your Android projects, there
+are grouping artifacts that include <em>most</em> splits.</p>
+<h4 id="android-base">Android base<a class="headerlink" href="#android-base" title="Permanent link">&para;</a></h4>
+<p>These 2 packs don't include AppCompat and are suitable for WearOS apps.</p>
+<p>Includes the following modules:
+- <a href="modules/activities">activities</a>
+- <a href="modules/appctx">appctx</a>
+- <a href="modules/bitflags">bitflags</a>
+- <a href="modules/bundle">bundle</a>
+- <a href="modules/collections">collections</a>
+- <a href="modules/coroutines">coroutines</a>
+- <a href="modules/dimensions">dimensions</a>
+- <a href="modules/fragments">fragments</a>
+- <a href="modules/fragmentargs">fragmentargs</a>
+- <a href="modules/intents">intents</a>
+- <a href="modules/lifecycle-coroutines">lifecycle-coroutines</a>
+- <a href="modules/mainhandler">mainhandler</a>
+- <a href="modules/mainthread">mainthread</a>
+- <a href="modules/material-colors">material-colors</a>
+- <a href="modules/permissions">permissions</a>
+- <a href="modules/preferences">preferences</a>
+- <a href="modules/resources">resources</a>
+- <a href="modules/systemservices">systemservices</a>
+- <a href="modules/toast">toast</a>
+- <a href="modules/views">views</a>
+- <a href="modules/views-coroutines">views-coroutines</a>
+- <a href="modules/views-recyclerview">views-recyclerview</a>
+- <a href="modules/views-selectable">views-selectable</a>
+- <a href="modules/views-selectable-constraintlayout">views-selectable-constraintlayout</a></p>
+<p>Gradle dependency:</p>
+<div class="highlight"><pre><span></span><code><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;com.louiscad.splitties:splitties-fun-pack-android-base:3.0.0-beta03&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>There's also a version with Views DSL. It additionally includes the following modules:</p>
+<ul>
+<li><a href="modules/views-dsl">views-dsl</a></li>
+<li><a href="modules/views-dsl-constraintlayout">views-dsl-constraintlayout</a></li>
+<li><a href="modules/views-dsl-recyclerview">views-dsl-recyclerview</a></li>
+</ul>
+<p>Gradle dependency:</p>
+<div class="highlight"><pre><span></span><code><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;com.louiscad.splitties:splitties-fun-pack-android-base-with-views-dsl:3.0.0-beta03&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="android-appcompat">Android AppCompat<a class="headerlink" href="#android-appcompat" title="Permanent link">&para;</a></h4>
+<p>These 2 packs include the <a href="#android-base">Android base</a> pack, and the following modules:
+- <a href="modules/alertdialog-appcompat">alertdialog-appcompat</a>
+- <a href="modules/alertdialog-appcompat-coroutines">alertdialog-appcompat-coroutines</a>
+- <a href="modules/views-appcompat">views-appcompat</a>
+- <a href="modules/views-selectable-appcompat">views-selectable-appcompat</a></p>
+<p>Gradle dependency:</p>
+<div class="highlight"><pre><span></span><code><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;com.louiscad.splitties:splitties-fun-pack-android-appcompat:3.0.0-beta03&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>There's also a version with Views DSL. It additionally includes the Views DSL version of the
+<a href="#android-base">Android base pack</a> and the following module:
+- <a href="modules/views-dsl-appcompat">views-dsl-appcompat</a></p>
+<p>Gradle dependency:</p>
+<div class="highlight"><pre><span></span><code><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;com.louiscad.splitties:splitties-fun-pack-android-appcompat-with-views-dsl:3.0.0-beta03&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="android-material-components">Android Material Components<a class="headerlink" href="#android-material-components" title="Permanent link">&para;</a></h4>
+<p>These 2 packs include the <a href="#android-appcompat">Android AppCompat</a> pack, and the following modules:
+- <a href="modules/alertdialog-material">alertdialog-material</a>
+- <a href="modules/material-lists">material-lists</a>
+- <a href="modules/snackbar">snackbar</a>
+- <a href="modules/views-cardview">views-cardview</a>
+- <a href="modules/views-coroutines-material">views-coroutines-material</a>
+- <a href="modules/views-material">views-material</a></p>
+<p>Gradle dependency:</p>
+<div class="highlight"><pre><span></span><code><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;com.louiscad.splitties:splitties-fun-pack-android-material-components:3.0.0-beta03&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>There's also a version with Views DSL. It additionally includes the Views DSL version of the
+<a href="#android-appcompat">Android AppCompat pack</a> and the following modules:
+- <a href="modules/views-dsl-coordinatorlayout">views-dsl-coordinatorlayout</a>
+- <a href="modules/views-dsl-material">views-dsl-material</a></p>
+<p>Gradle dependency:</p>
+<div class="highlight"><pre><span></span><code><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;com.louiscad.splitties:splitties-fun-pack-android-material-components-with-views-dsl:3.0.0-beta03&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="all-the-artifacts-47">All the artifacts (47)<a class="headerlink" href="#all-the-artifacts-47" title="Permanent link">&para;</a></h4>
+<p>Add the version of the library to not repeat yourself if you use multiple
+artifacts, and make sure their versions are in sync by adding an ext property
+into your root project <code>build.gradle</code> file:
+<div class="highlight"><pre><span></span><code><span class="n">allProjects</span> <span class="o">{</span>
+    <span class="n">ext</span> <span class="o">{</span>
+        <span class="n">splitties_version</span> <span class="o">=</span> <span class="s2">&quot;3.0.0-beta03&quot;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></p>
+<details>
+<summary>
+<b>Here are all the artifacts of this library. Just use the ones you need. (Click to expand)</b>
+</summary>
+
+<div class="highlight"><pre><span></span><code>implementation(&quot;com.louiscad.splitties:splitties-activities:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-alertdialog:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-alertdialog-appcompat:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-alertdialog-appcompat-coroutines:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-appctx:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-arch-lifecycle:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-arch-room:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-bitflags:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-bundle:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-checkedlazy:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-collections:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-coroutines:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-dimensions:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-exceptions:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-fragments:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-fragmentargs:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-intents:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-lifecycle-coroutines:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-mainhandler:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-mainthread:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-material-colors:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-material-lists:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-permissions:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-preferences:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-resources:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-snackbar:$splitties_version&quot;)
+debugImplementation(&quot;com.louiscad.splitties:splitties-stetho-init:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-systemservices:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-toast:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-typesaferecyclerview:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-views:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-views-appcompat:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-views-cardview:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-views-coroutines:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-views-coroutines-material:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-views-dsl:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-views-dsl-appcompat:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-views-dsl-constraintlayout:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-views-dsl-coordinatorlayout:$splitties_version&quot;)
+debugImplementation(&quot;com.louiscad.splitties:splitties-views-dsl-ide-preview:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-views-dsl-material:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-views-dsl-recyclerview:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-views-material:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-views-recyclerview:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-views-selectable:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-views-selectable-appcompat:$splitties_version&quot;)
+implementation(&quot;com.louiscad.splitties:splitties-views-selectable-constraintlayout:$splitties_version&quot;)
+</code></pre></div>
+
+</details>
+
+<h4 id="snapshots">Snapshots<a class="headerlink" href="#snapshots" title="Permanent link">&para;</a></h4>
+<p>Let's say you need to try a new feature or a fix that did not make it to a release yet:</p>
+<p>You can grab it in the snapshot version by adding the corresponding repository and
+changing the library version to the dev version you need in your root project <code>build.gradle</code> file:</p>
+<div class="highlight"><pre><span></span><code><span class="n">allProjects</span> <span class="o">{</span>
+    <span class="n">repositories</span> <span class="o">{</span>
+        <span class="n">mavenCentral</span><span class="o">()</span>
+        <span class="n">google</span><span class="o">()</span> <span class="c1">// Add sonatype snapshots repo below</span>
+        <span class="n">maven</span><span class="o">(</span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://oss.sonatype.org/content/repositories/snapshots&quot;</span><span class="o">)</span>
+    <span class="o">}</span>
+    <span class="n">ext</span> <span class="o">{</span>
+        <span class="n">splitties_version</span> <span class="o">=</span> <span class="s1">&#39;3.0.0-SNAPSHOT&#39;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<h2 id="new-versions-notifications">New versions notifications<a class="headerlink" href="#new-versions-notifications" title="Permanent link">&para;</a></h2>
+<p>Releases are announced on GitHub, you can subscribe by <a href="https://docs.github.com/en/github/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications#configuring-your-watch-settings-for-an-individual-repository">clicking on "Watch", then "Releases only"</a>.</p>
+<h2 id="improve-this-library">Improve this library<a class="headerlink" href="#improve-this-library" title="Permanent link">&para;</a></h2>
+<p>If you want this library to have <strong>a new feature or an improvement</strong> in a
+new or in an existing module, please, open an issue or vote/comment a
+similar one first, so it can be discussed.</p>
+<p><strong>Documentation contributions</strong> are also welcome.
+For typos or other small improvements, feel free to submit a PR
+(pull request) directly.
+For more significant doc contributions, please, open an issue first so it
+can be discussed.</p>
+<p><strong>If you find a bug</strong>, please open an issue with all the important details.
+If you know a simple fix that is not API breaking and that does not have
+side-effects that need to be considered, you may also directly submit a PR.</p>
+<p>You can also join the discussion on Kotlin's Slack in the
+<a href="https://kotlinlang.slack.com/messages/splitties">#splitties</a> channel (you can get an invitation
+<a href="http://slack.kotlinlang.org/">here</a>).</p>
+<h2 id="what-is-a-split">What is a split<a class="headerlink" href="#what-is-a-split" title="Permanent link">&para;</a></h2>
+<p>A "split" is a module of the Splitties library that you can add as a
+dependency. It only includes the required transitive dependencies.
+This allows you to only add what you need in your app or library module,
+so the final apk/ipa/app is as small as possible and doesn't include stuff not used
+by your app.</p>
+<p>Let's say you're build a Wear OS app using the Views DSL.
+Wear OS apps don't need AppCompat. Including it would be a waste of
+bandwidth and storage. The Views DSL core module relies on the Android
+SDK but not on AppCompat, so you don't bloat your wrist app with AppCompat
+by using Views DSL. However, if you are building a phone, tablet or computer
+Android app, there's a Views DSL AppCompat split with a few extensions for
+you to use.</p>
+<h2 id="credits">Credits<a class="headerlink" href="#credits" title="Permanent link">&para;</a></h2>
+<p>Special thanks to <a href="https://twitter.com/jovchem">Jovche Mitrejchevski</a> for
+helping in taking decisions for this project.</p>
+<p>Thanks to JetBrains and the contributors for <a href="https://github.com/Kotlin/anko">Anko</a>,
+which was a great source of inspiration, especially for Views DSL, and of course
+thanks for the excellent <a href="https://kotl.in">Kotlin</a> programming language that makes this project possible.</p>
+<p>Thanks to <a href="https://twitter.com/CodingDoug">Doug Stevenson</a> for his articles
+<a href="https://medium.com/@CodingDoug/kotlin-android-a-brass-tacks-experiment-part-3-84e65d567a37">"Kotlin &amp; Android: A Brass Tacks Experiment"</a>. It is fair to say that Views DSL has its root in this experiment.</p>
+<h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
+<p>This library is published under Apache License version 2.0 which you can see
+<a href="https://github.com/LouisCAD/Splitties/blob/master/LICENSE">here</a>.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+      
+        
+        <a href="modules/activities/index.html" class="md-footer__link md-footer__link--next" aria-label="Next: Activities" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Activities
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © 2021 Louis CAD
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.ddd52ceb.min.js"></script>
+      
+    
+  </body>
+</html>

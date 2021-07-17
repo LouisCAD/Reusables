@@ -1,0 +1,5 @@
+mkdocs
+mkdocs-material>=5.1.0
+mkdocs-markdownextradata-plugin
+pymdown-extensions>=7.0
+mdx_truly_sane_lists == 1.2
